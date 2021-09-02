@@ -33,4 +33,5 @@ int main() {
   retire_info retired = {384, -4000, 1};
 
   retirement(327, 21345, working, retired);
+  return 0;
 }
