@@ -64,6 +64,11 @@ line cal_inter(rectangle r1, rectangle r2, int mode) {
       inter.point = point2_start;
       inter.length = point2_end - point2_start;
     }
+    else if (between(point2_start, point2_end, point1_start) &&
+             between(point2_start, point2_end, point1_end)) {
+      inter.point = point1_start;
+      inter.length = point1_end - point1_start;
+    }
     else if (between(point1_start, point1_end, point2_start)) {
       inter.point = point2_start;
       inter.length = point1_end - point2_start;
@@ -87,6 +92,11 @@ line cal_inter(rectangle r1, rectangle r2, int mode) {
         between(point1_start, point1_end, point2_end)) {
       inter.point = point2_start;
       inter.length = point2_end - point2_start;
+    }
+    else if (between(point2_start, point2_end, point1_start) &&
+             between(point2_start, point2_end, point1_end)) {
+      inter.point = point1_start;
+      inter.length = point1_end - point1_start;
     }
     else if (between(point1_start, point1_end, point2_start)) {
       inter.point = point2_start;
