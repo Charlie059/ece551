@@ -7,6 +7,12 @@ void helper(int test[], size_t exp_out, size_t n) {
   size_t test_output = maxSeq(test, n);
 
   if (test_output != exp_out) {
+    printf("Fail in test\n:");
+    for (size_t i = 0; i < n; i++) {
+      printf("%d ", test[i]);
+    }
+    printf("\n");
+    printf("EXP: %zu, Result: %zu\n", exp_out, test_output);
     exit(EXIT_FAILURE);
   }
 }
