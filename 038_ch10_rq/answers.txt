@@ -1,6 +1,6 @@
 E
 E
-A
+D
 D
 D
 D
@@ -9,7 +9,7 @@ J
 E
 C
 G
-A
+B
 A
 D
 C
