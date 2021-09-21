@@ -4,25 +4,28 @@
 
 void reverse(char * str) {
   //WRITE ME!
-  const char * ptr = str;
-  size_t len = 0;
 
-  // Get the len of string
-  while (*ptr != '\0') {
-    len++;
-    ptr++;
-  }
+  if (str != NULL) {
+    const char * ptr = str;
+    size_t len = 0;
 
-  // Copy the string
-  char copy[len];
-  strcpy(copy, str);
+    // Get the len of string
+    while (*ptr != '\0') {
+      len++;
+      ptr++;
+    }
 
-  ptr = copy + len - 1;
+    // Copy the string
+    char copy[len];
+    strcpy(copy, str);
 
-  // Write the output
-  for (size_t i = 0; i < len; i++) {
-    str[i] = *ptr;
-    ptr -= 1;
+    ptr = copy + len - 1;
+
+    // Write the output
+    for (size_t i = 0; i < len; i++) {
+      str[i] = *ptr;
+      ptr -= 1;
+    }
   }
 }
 
