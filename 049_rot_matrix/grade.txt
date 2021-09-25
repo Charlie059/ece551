@@ -1,16 +1,23 @@
-Grading at 09/25/2021:23:16:25.103155
-For commit ID b387872ade1af0024fd32b0308b64d83bb638dcc
-Grading at Sat Sep 25 19:16:24 EDT 2021
+Grading at 09/25/2021:23:21:57.795839
+For commit ID 1a82e073ae5fee879a565a5b947731a9e8fab24f
+Grading at Sat Sep 25 19:21:53 EDT 2021
 Attempting to compile rotateMatrix.c
-rotateMatrix.c: In function ‘rotate’:
-rotateMatrix.c:61:10: error: ‘j’ undeclared (first use in this function)
-     for (j = 0; j < 10; j++) {
-          ^
-rotateMatrix.c:61:10: note: each undeclared identifier is reported only once for each function it appears in
-rotateMatrix.c:67:8: error: variable ‘rotateMatrix’ set but not used [-Werror=unused-but-set-variable]
-   char rotateMatrix[10][10] = {{0}};
-        ^~~~~~~~~~~~
-cc1: all warnings being treated as errors
-The code did not compile!
+testcase1 passed
+#################################################
+testcase2:
+testcase2 passed
+#################################################
+testcase3:
+testcase3 passed
+#################################################
+testcase4:
+testcase4 passed
+#################################################
+testcase5:
+testcase5 passed
+#################################################
+testcase6:
+Your file matched the expected output
+testcase6 passed
 
-Overall Grade: F
+Overall Grade: A
