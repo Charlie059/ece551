@@ -1,0 +1,21 @@
+Grading at 09/25/2021:19:53:23.503982
+For commit ID 33d1a47767de55d96d4f078eed871960dd83c7f6
+Grading at Sat Sep 25 15:53:23 EDT 2021
+Attempting to compile rotateMatrix.c
+rotateMatrix.c: In function ‘rotate’:
+rotateMatrix.c:16:16: error: ISO C forbids ‘return’ with expression, in function returning void [-Werror=pedantic]
+         return exit(EXIT_FAILURE);
+                ^~~~~~~~~~~~~~~~~~
+rotateMatrix.c:4:6: note: declared here
+ void rotate(FILE * f) {
+      ^~~~~~
+rotateMatrix.c:21:16: error: ISO C forbids ‘return’ with expression, in function returning void [-Werror=pedantic]
+         return exit(EXIT_FAILURE);
+                ^~~~~~~~~~~~~~~~~~
+rotateMatrix.c:4:6: note: declared here
+ void rotate(FILE * f) {
+      ^~~~~~
+cc1: all warnings being treated as errors
+The code did not compile!
+
+Overall Grade: F
