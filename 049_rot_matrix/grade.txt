@@ -1,23 +1,12 @@
-Grading at 09/25/2021:20:07:31.206921
-For commit ID 4b1fc37cd41ada3c6b1d94fe0b93144bcd15ec1a
-Grading at Sat Sep 25 16:07:26 EDT 2021
+Grading at 09/25/2021:23:15:13.056075
+For commit ID 97cb0533b9301c0c4dc6c1ecfe1285478693c815
+Grading at Sat Sep 25 19:15:12 EDT 2021
 Attempting to compile rotateMatrix.c
-testcase1 passed
-#################################################
-testcase2:
-testcase2 passed
-#################################################
-testcase3:
-testcase3 failed, your program didn't indicate this is a failure case
-#################################################
-testcase4:
-testcase4 passed
-#################################################
-testcase5:
-testcase5 passed
-#################################################
-testcase6:
-Your file did not match the expected ouput
-testcase6 failed, your output did not match with the answer
+rotateMatrix.c: In function ‘rotate’:
+rotateMatrix.c:7:10: error: unused variable ‘i’ [-Werror=unused-variable]
+   size_t i = 0;
+          ^
+cc1: all warnings being treated as errors
+The code did not compile!
 
-Overall Grade: D
+Overall Grade: F
