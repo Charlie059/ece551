@@ -1,11 +1,15 @@
-Grading at 09/25/2021:23:15:13.056075
-For commit ID 97cb0533b9301c0c4dc6c1ecfe1285478693c815
-Grading at Sat Sep 25 19:15:12 EDT 2021
+Grading at 09/25/2021:23:16:25.103155
+For commit ID b387872ade1af0024fd32b0308b64d83bb638dcc
+Grading at Sat Sep 25 19:16:24 EDT 2021
 Attempting to compile rotateMatrix.c
 rotateMatrix.c: In function ‘rotate’:
-rotateMatrix.c:7:10: error: unused variable ‘i’ [-Werror=unused-variable]
-   size_t i = 0;
+rotateMatrix.c:61:10: error: ‘j’ undeclared (first use in this function)
+     for (j = 0; j < 10; j++) {
           ^
+rotateMatrix.c:61:10: note: each undeclared identifier is reported only once for each function it appears in
+rotateMatrix.c:67:8: error: variable ‘rotateMatrix’ set but not used [-Werror=unused-but-set-variable]
+   char rotateMatrix[10][10] = {{0}};
+        ^~~~~~~~~~~~
 cc1: all warnings being treated as errors
 The code did not compile!
 
