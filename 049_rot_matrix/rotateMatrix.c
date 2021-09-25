@@ -57,14 +57,15 @@ void rotate(FILE * f) {
   }
 
   //test
-  for (int i = 0; i < 10; i++) {
-    for (j = 0; j < 10; j++) {
-      // printf("%c", matrix[i][j]);
-    }
-    // printf("\n");
-  }
+  // for (int i = 0; i < 10; i++) {
+  // for (int j = 0; j < 10; j++) {
+  // printf("%c", matrix[i][j]);
+  // }
+  // printf("\n");
+  //}
 
   char rotateMatrix[10][10] = {{0}};
+
   for (size_t i = 0; i < 10; i++) {
     for (size_t j = 0; j < 10; j++) {
       rotateMatrix[j][9 - i] = matrix[i][j];
@@ -72,7 +73,7 @@ void rotate(FILE * f) {
   }
 
   for (int i = 0; i < 10; i++) {
-    for (j = 0; j < 10; j++) {
+    for (int j = 0; j < 10; j++) {
       printf("%c", rotateMatrix[i][j]);
     }
     printf("\n");
