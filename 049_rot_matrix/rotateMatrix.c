@@ -13,12 +13,12 @@ void rotate(FILE * f) {
         j++;
       }
       else {
-        return exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
       }
     }
     else {
       if (j != 10 || i > 9) {
-        return exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
       }
       else {
         j = 0;  //reset j
