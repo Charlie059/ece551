@@ -13,11 +13,13 @@ void rotate(FILE * f) {
         j++;
       }
       else {
+        fprintf(stderr, "Invalid input\n");
         exit(EXIT_FAILURE);
       }
     }
     else {
       if (j != 10 || i > 9) {
+        fprintf(stderr, "Invalid input\n");
         exit(EXIT_FAILURE);
       }
       else {
@@ -26,6 +28,13 @@ void rotate(FILE * f) {
       }
     }
   }
+
+  if (i != 9 || j != 0) {
+    fprintf(stderr, "Invalid input\n");
+    exit(EXIT_FAILURE);
+  }
+
+  //  printf("i= %zu, j = %zu", i, j);
 
   char rotateMatrix[10][10] = {{0}};
   for (size_t i = 0; i < 9; i++) {
