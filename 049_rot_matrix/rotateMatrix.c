@@ -6,39 +6,67 @@ void rotate(FILE * f) {
   char matrix[10][10] = {{0}};
   size_t i = 0;
   size_t j = 0;
+  //while ((c = fgetc(f)) != EOF)
+  //  printf("i= %zu, j = %zu", i, j);
+
+  int counter = 0;
+  char text[109];
   while ((c = fgetc(f)) != EOF) {
-    if (c != '\n') {
-      if (i < 10 && j < 10) {
-        matrix[i][j] = c;
-        j++;
-      }
-      else {
-        fprintf(stderr, "Invalid input\n");
-        exit(EXIT_FAILURE);
-      }
+    if (counter < 109) {
+      text[counter] = c;
+      // printf("%c", text[counter]);
     }
-    else {
-      if (j != 10 || i > 9) {
-        fprintf(stderr, "Invalid input\n");
-        exit(EXIT_FAILURE);
-      }
-      else {
-        j = 0;  //reset j
-        i++;    // new row
-      }
-    }
+    // else {
+    // fprintf(stderr, "Invalid matrix: counter > 110 \n");
+    //  exit(EXIT_FAILURE);
+    //}
+    counter++;
   }
 
-  if (i != 9 || j != 0) {
-    fprintf(stderr, "Invalid input\n");
+  if (counter - 1 != 109) {  //if size not equal to 109
+    fprintf(stderr, "Invalid matrix: 109\n");
     exit(EXIT_FAILURE);
   }
 
-  //  printf("i= %zu, j = %zu", i, j);
+  for (int i = 0; i < 109; i++) {
+    if (text[i] == '\n') {
+      if ((i + 1) % 11 != 0) {
+        fprintf(stderr, "Invalid matrix: not allow non-mod11 to new line\n");
+        exit(EXIT_FAILURE);
+      }
+    }
+
+    if ((i + 1) % 11 == 0) {
+      if (text[i] != '\n') {
+        fprintf(stderr, "Invalid matrix: mod11 must to new line\n");
+        exit(EXIT_FAILURE);
+      }
+    }
+  }
+
+  // fill the matrix
+  counter = 0;
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 11; j++) {
+      if ((counter + 1) % 11 != 0) {
+        // printf("%c--", text[counter]);
+        matrix[i][j] = text[counter];
+      }
+      counter++;
+    }
+  }
+
+  //test
+  for (int i = 0; i < 10; i++) {
+    for (j = 0; j < 10; j++) {
+      // printf("%c", matrix[i][j]);
+    }
+    // printf("\n");
+  }
 
   char rotateMatrix[10][10] = {{0}};
-  for (size_t i = 0; i < 9; i++) {
-    for (size_t j = 0; j < 9; j++) {
+  for (size_t i = 0; i < 10; i++) {
+    for (size_t j = 0; j < 10; j++) {
       rotateMatrix[j][9 - i] = matrix[i][j];
     }
   }
