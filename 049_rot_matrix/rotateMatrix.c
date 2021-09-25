@@ -4,8 +4,8 @@
 void rotate(FILE * f) {
   int c;
   char matrix[10][10] = {{0}};
-  size_t i = 0;
-  size_t j = 0;
+  // size_t i = 0;
+  // size_t j = 0;
   //while ((c = fgetc(f)) != EOF)
   //  printf("i= %zu, j = %zu", i, j);
 
