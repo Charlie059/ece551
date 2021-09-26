@@ -2,7 +2,15 @@
 printCountries a,
 printCountries a,,
 printCountries a,
+printCountries a,\n
+printCountries a,123\n123
+printCountries a,123a
+printCountries a,a123
+printCountries a,12a3
+printCountries a,a
+
+
+
 
 #success
 printCountries population.csv
-printCountries Chiabn,1111

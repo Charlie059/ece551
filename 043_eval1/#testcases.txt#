@@ -1,7 +1,0 @@
-#error
-printCountries a,
-printCountries a,,
-printCountries a,
-
-#success
-printCountries population.csv
