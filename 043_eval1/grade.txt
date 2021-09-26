@@ -1,28 +1,12 @@
-Grading at 09/26/2021:16:22:56.764664
-For commit ID 4a49aadb11f0eab314de36f6a6116d6234772a1b
-Grading at Sun Sep 26 12:22:54 EDT 2021
+Grading at 09/26/2021:21:09:01.026347
+For commit ID 44ad6ebd5455d2901d49e22aeae4712a8726018c
+Grading at Sun Sep 26 17:09:00 EDT 2021
 Running your test cases
 
 Compiling printCountries
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
-+-----------------------------------------------------------------------+
-Test case printCountries invalid.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries invalid2.csv
-Germany: 0
-: 0
-: 20613987
-test1: 0
-test2: 7
-test3: 7
-Your program did not indicate a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries population.csv
-Your file matched the expected output
-
-You have FAILED one or more of your test cases
-Keep debugging
+Makefile:4: recipe for target 'printCountries' failed
+The code did not compile!
 
 Overall Grade: NO GRADE YET
