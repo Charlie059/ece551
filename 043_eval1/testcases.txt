@@ -1,6 +1,8 @@
 #error
-printCountries invalid.csv
-printCountries invalid2.csv
+printCountries a,
+printCountries a,,
+printCountries a,
 
 #success
 printCountries population.csv
+printCountries Chiabn,1111
