@@ -8,6 +8,8 @@ printCountries a,123a
 printCountries a,a123
 printCountries a,12a3
 printCountries a,a
+printCountries ,--
+printCountries aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ,12
 
 
 
