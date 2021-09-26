@@ -1,6 +1,6 @@
-Grading at 09/26/2021:21:20:43.746906
-For commit ID e5d726530ac1ad261bc87a2f2c89508b6145137c
-Grading at Sun Sep 26 17:20:40 EDT 2021
+Grading at 09/26/2021:21:26:46.858722
+For commit ID 24ce7e06e80bac5d0069181e6c40a4e7a83b25b0
+Grading at Sun Sep 26 17:26:39 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -16,14 +16,28 @@ Your program successfully indicated a failure case
 Test case printCountries a,
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
+Test case printCountries a,\n
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries a,123\n123
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries a,123a
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries a,a123
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries a,12a3
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries a,a
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
 Test case printCountries population.csv
 Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries Chiabn,1111
-Line_1_did_not_match
-Your file did not match the expected ouput
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
