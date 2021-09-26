@@ -1,5 +1,6 @@
 #error
 printCountries invalid.csv
+2printCountries invalid2.csv
 
 #success
 printCountries population.csv
