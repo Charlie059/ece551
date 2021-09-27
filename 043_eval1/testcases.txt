@@ -1,6 +1,14 @@
 #error
-printCountries invaild.csv
-
+printCountries invalid_1.csv
+printCountries invalid_2.csv
+printCountries invalid_3.csv
+printCountries invalid_4.csv
+printCountries invalid_5.csv
+printCountries invalid_6.csv
+printCountries invalid_7.csv
+printCountries invalid_8.csv
+printCountries invalid_9.csv
+printCountries invalid_10.csv
 
 #success
 printCountries population.csv
