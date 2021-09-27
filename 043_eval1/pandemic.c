@@ -47,7 +47,7 @@ country_t parseLine(char * line) {
 
   // Check the length of country name
   countryLen = ptr_comma - readLine;
-  if (countryLen > MAX_NAME_LEN) {
+  if (countryLen >= MAX_NAME_LEN) {
     printError("Expect country name size less than 64.\n");
     exit(EXIT_FAILURE);
   }
