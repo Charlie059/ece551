@@ -103,7 +103,20 @@ country_t parseLine(char * line) {
 }
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
-  //WRITE ME
+  // Check if n_days less than 7
+  if (n_days < 7) {
+    printError("Expect n_days greater or equal than 7\n");
+    exit(EXIT_FAILURE);
+  }
+
+  // Calculate the avg
+  for (size_t i = 0; i < n_days - 6; i++) {
+    double sum = 0;
+    for (size_t j = 0; j < 7; j++) {
+      sum += data[i + j];
+    }
+    avg[i] = sum / 7;
+  }
 }
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
