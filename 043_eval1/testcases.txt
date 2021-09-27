@@ -4,5 +4,5 @@ printCountries invaild.csv
 
 #success
 printCountries population.csv
-printCountries vaild1
+printCountries vaild1.csv
 printRunningAvg population.csv daily_small.csv
