@@ -1,6 +1,6 @@
-Grading at 09/27/2021:03:12:00.669072
-For commit ID ec2a29a14f3addc9ad709294fd8a2c99e3a3de7d
-Grading at Sun Sep 26 23:11:49 EDT 2021
+Grading at 09/27/2021:03:16:02.942686
+For commit ID 5341fb780726786530af788119ce463982276d0a
+Grading at Sun Sep 26 23:15:52 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -63,8 +63,7 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_6.csv
 Your file matched the expected output
-
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+Program must be one of printCountries printRunningAvg printCumulative printDailyMax
+But found "printDailymax"
 
 Overall Grade: NO GRADE YET
