@@ -17,5 +17,5 @@ printDailyMax population.csv daily_small.csv
 printDailyMax population.csv daily_cases.csv
 printDailyMax population.csv daily_7.csv
 printDailyMax population.csv daily_6.csv
-printDailymax population.csv daily_zero.csv
-printDailymax population.csv daily_zero_1.csv
+printDailyMax population.csv daily_zero.csv
+printDailyMax population.csv daily_zero_1.csv
