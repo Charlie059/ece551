@@ -1,18 +1,7 @@
 #error
-printCountries a,
-printCountries a,,
-printCountries a,
-printCountries a,\n
-printCountries a,123\n123
-printCountries a,123a
-printCountries a,a123
-printCountries a,12a3
-printCountries a,a
-printCountries ,--
-printCountries aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ,12
-printCountries aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,12
-printCountries aaaaaaaa,12
+printCountries invaild.csv
 
 
 #success
 printCountries population.csv
+printRunningAvg population.csv daily_small.csv
