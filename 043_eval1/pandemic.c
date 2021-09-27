@@ -3,16 +3,18 @@
 #include <errno.h>
 #include <inttypes.h>
 #include <limits.h>
-#include <string.h>  //?
+#include <string.h>
 
 #include "ctype.h"
 #include "stdio.h"
 #include "stdlib.h"
+
 // Function which print the error message
 void printError(char * error) {
   fprintf(stderr, "%s", error);
 }
 
+// Function which check population value is vaild
 void checkVaild(size_t length, char temp[]) {
   for (size_t i = 0; i < length; i++) {
     if (isdigit(temp[i]) == 0 && i != 0) {
@@ -27,7 +29,7 @@ void checkVaild(size_t length, char temp[]) {
     }
   }
 }
-
+// Task 1
 country_t parseLine(char * line) {
   country_t ans;
   const char * readLine = line;                       // Get the input String
@@ -102,6 +104,7 @@ country_t parseLine(char * line) {
   return ans;
 }
 
+//Task 2
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   // Check if n_days less than 7
   if (n_days < 7) {
@@ -118,21 +121,25 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   }
 }
 
+//Task 3
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
   double cumulative_data = 0;
   for (size_t i = 0; i < n_days; i++) {
-    cumulative_data += data[i];
+    cumulative_data += data[i];  //cumlative the daily data
     cum[i] = (cumulative_data / pop) * 100000;
   }
 }
 
+//Task 4
 void printCountryWithMax(country_t * countries,
                          size_t n_countries,
                          unsigned ** data,
                          size_t n_days) {
   unsigned int max_daily_arr[n_countries];  //Def max daily case in each country
-  int tie = 0;
-  for (size_t i = 0; i < n_countries; i++) {  // get the max daily case in each country
+  int tie = 0;  // def if there are at least two max daily countries
+
+  // get the max daily case in each country and store in max_daily_arr
+  for (size_t i = 0; i < n_countries; i++) {
     unsigned int max_daily = 0;
     for (size_t j = 0; j < n_days; j++) {
       if (max_daily < data[i][j]) {
@@ -160,12 +167,13 @@ void printCountryWithMax(country_t * countries,
     }
   }
 
+  // If no tie, printout max country
   if (tie == 0) {
     printf("%s has the most daily cases with %u\n",
            countries[max_country_idx].name,
            max_daily_country);
   }
-  else {
+  else {  //else print tie message
     printf("There is a tie between at least two countries");
   }
 }
