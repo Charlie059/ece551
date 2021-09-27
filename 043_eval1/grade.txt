@@ -1,52 +1,23 @@
-Grading at 09/27/2021:00:42:39.638473
-For commit ID 500bbf62252a879c9827b6876a9c6b0c8ac2ecb4
-Grading at Sun Sep 26 20:42:30 EDT 2021
+Grading at 09/27/2021:00:51:14.143461
+For commit ID 0c249121b5fc8ff9c5d761744fa000d755bba3ea
+Grading at Sun Sep 26 20:51:11 EDT 2021
 Running your test cases
 
 Compiling printCountries
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
 +-----------------------------------------------------------------------+
-Test case printCountries a,
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries a,,
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries a,
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries a,\n
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries a,123\n123
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries a,123a
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries a,a123
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries a,12a3
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries a,a
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries ,--
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ,12
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,12
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries aaaaaaaa,12
+Test case printCountries invaild.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population.csv
+Your file matched the expected output
+
+Compiling printRunningAvg
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
++-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv daily_small.csv
 Your file matched the expected output
 
 You have PASSED all of your test cases
