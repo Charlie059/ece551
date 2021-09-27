@@ -130,5 +130,42 @@ void printCountryWithMax(country_t * countries,
                          size_t n_countries,
                          unsigned ** data,
                          size_t n_days) {
-  //WRITE ME
+  unsigned int max_daily_arr[n_countries];  //Def max daily case in each country
+  int tie = 0;
+  for (size_t i = 0; i < n_countries; i++) {  // get the max daily case in each country
+    unsigned int max_daily = 0;
+    for (size_t j = 0; j < n_days; j++) {
+      if (max_daily < data[i][j]) {
+        max_daily = data[i][j];
+      }
+    }
+    max_daily_arr[i] = max_daily;
+  }
+
+  // Find the max value by comparing each countries' max cases
+  unsigned int max_daily_country = 0;
+  size_t max_country_idx = 0;
+  for (size_t i = 0; i < n_countries; i++) {
+    if (max_daily_country < max_daily_arr[i]) {
+      max_daily_country = max_daily_arr[i];
+      max_country_idx = i;
+    }
+  }
+
+  // Check if tie
+  for (size_t i = 0; i < n_countries; i++) {
+    if (i != max_country_idx && max_daily_arr[i] == max_daily_country) {
+      tie = 1;
+      break;
+    }
+  }
+
+  if (tie == 0) {
+    printf("%s has the most daily cases with %u\n",
+           countries[max_country_idx].name,
+           max_daily_country);
+  }
+  else {
+    printf("There is a tie between at least two countries");
+  }
 }
