@@ -9,6 +9,9 @@ printCountries invalid_7.csv
 printCountries invalid_8.csv
 printCountries invalid_9.csv
 printCountries invalid_10.csv
+printCountries invalid_11.csv
+printCountries invalid_12.csv
+
 
 #success
 printCountries population.csv
