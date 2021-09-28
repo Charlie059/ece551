@@ -1,6 +1,6 @@
-Grading at 09/28/2021:19:04:13.526005
-For commit ID ef22d00c7665a20ec3a4d37019c38c45bf8e194b
-Grading at Tue Sep 28 15:03:57 EDT 2021
+Grading at 09/28/2021:19:23:55.383868
+For commit ID 1aeef1b9d87bcc4c8e92b37ce24426b3c340c674
+Grading at Tue Sep 28 15:23:37 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -11,10 +11,16 @@ Test case printCountries invalid_1.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_2.csv
-Your program successfully indicated a failure case
+a: 0
+USA: 222
+AAA: 2312312
+Your program did not indicate a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_3.csv
-Your program successfully indicated a failure case
+AAA: 2312312
+BC: 18446744073709430404
+a: 0
+Your program did not indicate a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_4.csv
 Our printCountries does not consider this an error case
@@ -23,7 +29,8 @@ Test case printCountries invalid_5.csv
 Our printCountries does not consider this an error case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_6.csv
-Your program successfully indicated a failure case
+a: 0
+Your program did not indicate a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_7.csv
 Our printCountries does not consider this an error case
@@ -42,6 +49,9 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_12.csv
 Our printCountries does not consider this an error case
++-----------------------------------------------------------------------+
+Test case printCountries invalid_13.csv
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population.csv
 Your file matched the expected output
