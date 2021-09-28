@@ -15,20 +15,20 @@ void printError(char * error) {
 }
 
 // Function which check population value is vaild
-void checkVaild(size_t length, char temp[]) {
-  for (size_t i = 0; i < length; i++) {
-    if (isdigit(temp[i]) == 0 && i != 0) {
-      printError("Expect population is all digit.\n");
-      exit(EXIT_FAILURE);
-    }
-    if (i == 0 && temp[0] != '-') {
-      if (isdigit(temp[0]) == 0) {
-        printError("Expect population is all digit.\n");
-        exit(EXIT_FAILURE);
-      }
-    }
-  }
-}
+/* void checkVaild(size_t length, char temp[]) { */
+/*   for (size_t i = 0; i < length; i++) { */
+/*     if (isdigit(temp[i]) == 0 && i != 0) { */
+/*       printError("Expect population is all digit.\n"); */
+/*       exit(EXIT_FAILURE); */
+/*     } */
+/*     if (i == 0 && temp[0] != '-') { */
+/*       if (isdigit(temp[0]) == 0) { */
+/*         printError("Expect population is all digit.\n"); */
+/*         exit(EXIT_FAILURE); */
+/*       } */
+/*     } */
+/*   } */
+/* } */
 // Task 1
 country_t parseLine(char * line) {
   country_t ans;
@@ -72,8 +72,8 @@ country_t parseLine(char * line) {
 
   // Check the vaild population
   if (ptr_newline == NULL) {
-    checkVaild(popLen, temp);  // Check if temp has non-value char after first digit
-    if (popLen == 0) {         // Check if no population
+    //    checkVaild(popLen, temp);  // Check if temp has non-value char after first digit
+    if (popLen == 0) {  // Check if no population
       printError("Expect country population, but not found.\n");
       exit(EXIT_FAILURE);
     }
@@ -85,8 +85,8 @@ country_t parseLine(char * line) {
       exit(EXIT_FAILURE);
     }
     else {
-      checkVaild(popLen - 1,
-                 temp);   // Check if temp has non-value char after first digit
+      //     checkVaild(popLen - 1,
+      //         temp);   // Check if temp has non-value char after first digit
       if (popLen == 1) {  // Check if no population
         printError("Expect country population, but not found.\n");
         exit(EXIT_FAILURE);
