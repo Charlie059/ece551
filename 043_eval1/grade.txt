@@ -1,6 +1,6 @@
-Grading at 09/29/2021:03:37:42.876901
-For commit ID b73783d01ef5f2fc53446100a8033d6b2bec13e4
-Grading at Tue Sep 28 23:37:24 EDT 2021
+Grading at 09/29/2021:04:11:56.206851
+For commit ID 0669fc12a610c249e8638f5c59815f31b0dcd80c
+Grading at Wed Sep 29 00:11:35 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -22,21 +22,12 @@ BC: 18446744073709430404
 a: 0
 Your program did not indicate a failure case
 +-----------------------------------------------------------------------+
-Test case printCountries invalid_4.csv
-Our printCountries does not consider this an error case
-+-----------------------------------------------------------------------+
-Test case printCountries invalid_5.csv
-Our printCountries does not consider this an error case
-+-----------------------------------------------------------------------+
 Test case printCountries invalid_6.csv
 a: 0
 Your program did not indicate a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_7.csv
 Our printCountries does not consider this an error case
-+-----------------------------------------------------------------------+
-Test case printCountries invalid_8.csv
-Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_9.csv
 Your program successfully indicated a failure case
@@ -47,18 +38,26 @@ Our printCountries does not consider this an error case
 Test case printCountries invalid_11.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case printCountries invalid_12.csv
-Our printCountries does not consider this an error case
-+-----------------------------------------------------------------------+
 Test case printCountries invalid_13.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case printCountries invalid_16.csv
-Our printCountries does not consider this an error case
-+-----------------------------------------------------------------------+
 Test case printCountries invalid_17.csv
-: 0
-Your program did not indicate a failure case
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries invalid_18.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries invalid_19.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries invalid_20.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries invalid_21.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries invalid_22.csv
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population.csv
 Your file matched the expected output
@@ -119,9 +118,9 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_zero.csv
 Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printDailyMax population.csv daily_zero_1.csv
-Your file matched the expected output
+
+Grading has taken more than 20 seconds
+Skipping remaining test cases
 
 You have FAILED one or more of your test cases
 Keep debugging
