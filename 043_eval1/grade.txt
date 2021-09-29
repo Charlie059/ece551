@@ -1,6 +1,6 @@
-Grading at 09/29/2021:05:03:05.161996
-For commit ID 33f155dfd90723e4ed9666885a0ecdef65c91fb1
-Grading at Wed Sep 29 01:02:45 EDT 2021
+Grading at 09/29/2021:05:10:41.770765
+For commit ID a420c9138b7aca2177399295eb8342a1595f1121
+Grading at Wed Sep 29 01:10:21 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -53,12 +53,10 @@ Test case printCountries invalid_22.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries vaild1.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries test_neg.csv
 Your file matched the expected output
@@ -68,68 +66,54 @@ rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_small.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_cases.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_7.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_6.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 
 Compiling printCumulative
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCumulative.o -o printCumulative
 +-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_small.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_cases.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_7.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_6.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 
 Compiling printDailyMax
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o printDailyMax
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_small.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_cases.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_7.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_6.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_zero.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_zero_1.csv
-Line_1_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 
 You have FAILED one or more of your test cases
 Keep debugging
