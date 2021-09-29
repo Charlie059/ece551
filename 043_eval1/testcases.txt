@@ -1,4 +1,7 @@
 #error
+printCountries invalid_23.csv
+printCountries invalid_24.csv
+printCountries invalid_25.csv
 
 #success
 printCountries population.csv
