@@ -112,10 +112,6 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 
 //Task 3
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
-  if (n_days < 7) {
-    return;
-  }  //  Here we should not return if n_days < 7, it will return memory error
-
   // If pointer is NULL, do nothing
   if (data == NULL || cum == NULL) {
     return;
