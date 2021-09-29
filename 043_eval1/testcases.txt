@@ -1,11 +1,11 @@
 #error
 printCountries invalid_23.csv
-printCountries invalid_24.csv
 printCountries invalid_25.csv
-printCountries invalid_26.csv
 
 #success
 printCountries population.csv
+printCountries invalid_24.csv
+printCountries invalid_26.csv
 printCountries vaild1.csv
 printCountries test_neg.csv
 printCountries invalid_4.csv
