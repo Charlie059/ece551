@@ -1,6 +1,6 @@
-Grading at 09/29/2021:06:31:06.273637
-For commit ID 580ceec773b4847255d8330034cd82db84caf7e9
-Grading at Wed Sep 29 02:30:45 EDT 2021
+Grading at 09/29/2021:06:36:52.667722
+For commit ID 8b90901ff57d37e65b788f36663946e17fef3d62
+Grading at Wed Sep 29 02:36:32 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -80,9 +80,6 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_6.csv
 Valgrind reported memory errors
-+-----------------------------------------------------------------------+
-Test case printCumulative one_people.csv daily_cases.csv
-Your file matched the expected output
 
 Compiling printDailyMax
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
