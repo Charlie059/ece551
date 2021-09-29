@@ -1,6 +1,6 @@
-Grading at 09/29/2021:04:15:42.308584
-For commit ID 973c521868d7a95b6f4d5e6eebf9d81c386a7f23
-Grading at Wed Sep 29 00:15:21 EDT 2021
+Grading at 09/29/2021:04:17:53.517478
+For commit ID addbb1066066fafaa26027fd23dafadcd31b7763
+Grading at Wed Sep 29 00:17:33 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -48,10 +48,10 @@ Test case printCountries invalid_18.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_19.csv
-Your program successfully indicated a failure case
+Our printCountries does not consider this an error case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_20.csv
-Your program successfully indicated a failure case
+Our printCountries does not consider this an error case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_21.csv
 Your program successfully indicated a failure case
@@ -118,9 +118,9 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_zero.csv
 Your file matched the expected output
-
-Grading has taken more than 20 seconds
-Skipping remaining test cases
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_zero_1.csv
+Your file matched the expected output
 
 You have FAILED one or more of your test cases
 Keep debugging
