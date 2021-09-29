@@ -3,15 +3,11 @@ printCountries invalid_1.csv
 printCountries invalid_2.csv
 printCountries invalid_3.csv
 printCountries invalid_6.csv
-printCountries invalid_7.csv
 printCountries invalid_9.csv
-printCountries invalid_10.csv
 printCountries invalid_11.csv
 printCountries invalid_13.csv
 printCountries invalid_17.csv
 printCountries invalid_18.csv
-printCountries invalid_19.csv
-printCountries invalid_20.csv
 printCountries invalid_21.csv
 printCountries invalid_22.csv
 
@@ -21,6 +17,13 @@ printCountries invalid_22.csv
 printCountries population.csv
 printCountries vaild1.csv
 printCountries test_neg.csv
+printCountries invalid_4.csv
+printCountries invalid_5.csv
+printCountries invalid_7.csv
+printCountries invalid_10.csv
+printCountries invalid_12.csv
+printCountries invalid_19.csv
+printCountries invalid_20.csv
 printRunningAvg population.csv daily_small.csv
 printRunningAvg population.csv daily_cases.csv
 printRunningAvg population.csv daily_7.csv
