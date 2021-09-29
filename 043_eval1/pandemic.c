@@ -112,7 +112,12 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 
 //Task 3
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
-  if (n_days < 7) {
+  /* if (n_days < 7) { */
+  /*   return; */
+  /* } */  //Here we should not return if n_days < 7, it will return memory error
+
+  // If pointer is NULL, do nothing
+  if (data == NULL || cum == NULL) {
     return;
   }
 
@@ -130,6 +135,11 @@ void printCountryWithMax(country_t * countries,
                          size_t n_days) {
   // If n_countries = 0 or n_days = 0, then return
   if (n_countries == 0 || n_days == 0) {
+    return;
+  }
+
+  // If pointer is NULL, do nothing
+  if (data == NULL || countries == NULL) {
     return;
   }
 
