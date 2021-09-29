@@ -15,11 +15,21 @@ void printError(char * error) {
 }
 
 //Function which check population value is vaild
-void checkVaild(char temp[]) {
-  if (temp[0] != '-' && isdigit(temp[0]) == 0) {
+size_t checkVaild(size_t length, char temp[]) {
+  size_t idx = 0;
+  while (temp[idx] == ' ') {
+    if (idx < length)
+      idx++;
+    else
+      break;
+  }
+
+  if (temp[idx] != '-' && isdigit(temp[idx]) == 0) {
     printError("Expect population is all digit.\n");
     exit(EXIT_FAILURE);
   }
+
+  return idx;
 }
 // Task 1
 country_t parseLine(char * line) {
@@ -63,10 +73,10 @@ country_t parseLine(char * line) {
   strncpy(temp, ptr_comma + 1, popLen);  // Copy the population to the temp string
 
   // Check the vaild population
-  checkVaild(temp);
+  size_t idx = checkVaild(popLen, temp);
 
   // Convert temp to uint_64_t
-  uint64_t population = strtoumax(temp, NULL, 10);
+  uint64_t population = strtoumax(temp + idx, NULL, 10);
   if (errno == ERANGE) {  // cite man ?
     printError("Expect population is less than MAX uint_64_t.\n");
     exit(EXIT_FAILURE);
