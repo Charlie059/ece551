@@ -121,6 +121,11 @@ void printCountryWithMax(country_t * countries,
                          size_t n_countries,
                          unsigned ** data,
                          size_t n_days) {
+  // If n_countries = 0 or n_days = 0, then return
+  if (n_countries == 0 || n_days == 0) {
+    return;
+  }
+
   unsigned int max_daily_arr[n_countries];  //Def max daily case in each country
   int tie = 0;  // def if there are at least two max daily countries
 
