@@ -1,26 +1,11 @@
-Grading at 09/29/2021:16:13:37.590982
-For commit ID 5d563ce12506eda82fad8395d7afbe27e2dd9b25
-Grading at Wed Sep 29 12:13:16 EDT 2021
+Grading at 09/29/2021:16:24:02.897004
+For commit ID 54c6dd7aa8d53368320881d4efade53de8104b37
+Grading at Wed Sep 29 12:23:43 EDT 2021
 Running your test cases
 
 Compiling printCountries
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
-+-----------------------------------------------------------------------+
-Test case printCountries invalid_23.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries invalid_25.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries invalid_27.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries invalid_28.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries invalid_17.csv
-Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population.csv
 Your file matched the expected output
@@ -108,9 +93,12 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_6.csv
 Your file matched the expected output
-
-Grading has taken more than 20 seconds
-Skipping remaining test cases
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_zero.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_zero_1.csv
+Your file matched the expected output
 
 You have PASSED all of your test cases
 Keep adding test cases until you are satisfied your program is correct
