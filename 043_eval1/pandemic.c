@@ -16,20 +16,21 @@ void printError(char * error) {
 
 //Function which check population value is vaild
 size_t checkVaild(size_t length, char temp[]) {
-  size_t idx = 0;
-  while (temp[idx] == ' ') {
+  size_t idx = 0;             //indicate how many space we have read
+  while (temp[idx] == ' ') {  // Read space until read others
     if (idx < length)
       idx++;
     else
       break;
   }
 
+  //After reading space, if the first char is not '-' and not digit, calll error
   if (temp[idx] != '-' && isdigit(temp[idx]) == 0) {
     printError("Expect population is all digit.\n");
     exit(EXIT_FAILURE);
   }
 
-  return idx;
+  return idx;  //return the idx let the function strtoumax to read
 }
 // Task 1
 country_t parseLine(char * line) {
@@ -104,6 +105,10 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 
 //Task 3
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
+  if (n_days < 7) {
+    return;
+  }
+
   double cumulative_data = 0;
   for (size_t i = 0; i < n_days; i++) {
     cumulative_data += data[i];  //cumlative the daily data
