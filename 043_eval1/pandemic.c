@@ -16,7 +16,7 @@ void printError(char * error) {
 
 //Function which check population value is vaild
 void checkVaild(char temp[]) {
-  if (temp[0] != '-' && isdigit(temp[0]) != 1) {
+  if (temp[0] != '-' && isdigit(temp[0]) == 0) {
     printError("Expect population is all digit.\n");
     exit(EXIT_FAILURE);
   }
