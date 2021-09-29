@@ -50,6 +50,12 @@ country_t parseLine(char * line) {
   char temp[21] = "";                            // temp to store the population value
   size_t countryLen = 0;                         // define the country name length
 
+  //If line is NULL, return error
+  if (line == NULL) {
+    printError("arg is NULL.\n");
+    exit(EXIT_FAILURE);
+  }
+
   if (ptr_comma == NULL) {  //If no comma found, return failure.
     printError("Expect comma, but nothing found.\n");
     exit(EXIT_FAILURE);
@@ -85,7 +91,8 @@ country_t parseLine(char * line) {
 
   // Convert temp to uint_64_t
   uint64_t population = strtoumax(temp + idx, NULL, 10);
-  if (errno == ERANGE) {  // cite man ?
+  if (errno ==
+      ERANGE) {  // Cite: man strtoumax, we got it will set the FLAG when the max or min value
     printError("Expect population is less than MAX uint_64_t.\n");
     exit(EXIT_FAILURE);
   }
@@ -97,6 +104,11 @@ country_t parseLine(char * line) {
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   // Check if n_days less than 7
   if (n_days < 7) {
+    return;
+  }
+
+  // Check if NULL
+  if (data == NULL || avg == NULL) {
     return;
   }
 
