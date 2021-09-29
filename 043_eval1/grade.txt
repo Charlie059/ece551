@@ -1,11 +1,20 @@
-Grading at 09/29/2021:05:19:19.710021
-For commit ID c187ea5391d144fc5227a93413820f9831e32c30
-Grading at Wed Sep 29 01:19:02 EDT 2021
+Grading at 09/29/2021:05:31:18.886244
+For commit ID 1f420d48aa709d01c22aefce0d7570f0c358c8d8
+Grading at Wed Sep 29 01:31:00 EDT 2021
 Running your test cases
 
 Compiling printCountries
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
++-----------------------------------------------------------------------+
+Test case printCountries invalid_23.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries invalid_24.csv
+Our printCountries does not consider this an error case
++-----------------------------------------------------------------------+
+Test case printCountries invalid_25.csv
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population.csv
 Your file matched the expected output
@@ -91,7 +100,7 @@ Your file matched the expected output
 Test case printDailyMax population.csv daily_zero_1.csv
 Your file matched the expected output
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
