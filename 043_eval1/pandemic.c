@@ -30,6 +30,14 @@ size_t checkVaild(size_t length, char temp[]) {
     exit(EXIT_FAILURE);
   }
 
+  // if have '-' but next char is not digit, return error
+  if (idx < length) {
+    if (temp[idx] == '-' && isdigit(temp[idx + 1] == 0)) {
+      printError("Expect population is all digit.\n");
+      exit(EXIT_FAILURE);
+    }
+  }
+
   return idx;  //return the idx let the function strtoumax to read
 }
 // Task 1
