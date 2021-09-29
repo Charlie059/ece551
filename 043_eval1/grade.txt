@@ -1,6 +1,6 @@
-Grading at 09/29/2021:05:10:41.770765
-For commit ID a420c9138b7aca2177399295eb8342a1595f1121
-Grading at Wed Sep 29 01:10:21 EDT 2021
+Grading at 09/29/2021:05:17:25.164295
+For commit ID 201d2a9fe1b7663d836b9c4b09f8f2d2845ddbeb
+Grading at Wed Sep 29 01:17:04 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -19,14 +19,8 @@ Your program successfully indicated a failure case
 Test case printCountries invalid_6.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case printCountries invalid_7.csv
-Our printCountries does not consider this an error case
-+-----------------------------------------------------------------------+
 Test case printCountries invalid_9.csv
 Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries invalid_10.csv
-Our printCountries does not consider this an error case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_11.csv
 Your program successfully indicated a failure case
@@ -39,12 +33,6 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_18.csv
 Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries invalid_19.csv
-Our printCountries does not consider this an error case
-+-----------------------------------------------------------------------+
-Test case printCountries invalid_20.csv
-Our printCountries does not consider this an error case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid_21.csv
 Your program successfully indicated a failure case
@@ -59,6 +47,27 @@ Test case printCountries vaild1.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries test_neg.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries invalid_4.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries invalid_5.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries invalid_7.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries invalid_10.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries invalid_12.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries invalid_19.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries invalid_20.csv
 Your file matched the expected output
 
 Compiling printRunningAvg
@@ -99,23 +108,11 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o prin
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_small.csv
 Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printDailyMax population.csv daily_cases.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printDailyMax population.csv daily_7.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printDailyMax population.csv daily_6.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printDailyMax population.csv daily_zero.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printDailyMax population.csv daily_zero_1.csv
-Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+Grading has taken more than 20 seconds
+Skipping remaining test cases
+
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
