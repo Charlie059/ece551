@@ -57,7 +57,9 @@ void printCounts(counts_t * c, FILE * outFile) {
   for (size_t i = 0; i < c->size; i++) {
     fprintf(outFile, "%s: %d\n", c->one_count_arr[i]->value, c->one_count_arr[i]->count);
   }
-  fprintf(outFile, "<unknown>: %d\n", c->unknown);
+  if (c->unknown != 0) {
+    fprintf(outFile, "<unknown>: %d\n", c->unknown);
+  }
 }
 
 void freeCounts(counts_t * c) {
