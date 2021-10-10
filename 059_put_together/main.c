@@ -25,7 +25,9 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   counts_t * ans = createCounts();
 
   while ((len = getline(&line, &sz, f)) >= 0) {
-    line[len - 1] = '\0';
+    if (line[len - 1] == '\n') {
+      line[len - 1] = '\0';
+    }
     // printf("%s\n", line);
     addCount(ans, (lookupValue(kvPairs, line)));
   }
