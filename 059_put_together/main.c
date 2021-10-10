@@ -13,6 +13,11 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   // out: red: 1, blue: 1, unknown: 1
 
   FILE * f = fopen(filename, "r");
+
+  if (f == NULL) {
+    fprintf(stderr, "cannot read file");
+    exit(EXIT_FAILURE);
+  }
   char * line = NULL;
   size_t sz;
   ssize_t len = 0;
@@ -46,6 +51,11 @@ int main(int argc, char ** argv) {
     char * out = computeOutputFileName(argv[i]);
 
     FILE * f = fopen(out, "w");
+    if (f == NULL) {
+      perror("can't open file");
+      exit(EXIT_FAILURE);
+    }
+
     printCounts(count, f);
     if (fclose(f) != 0) {
       fprintf(stderr, "Cannot close the file");
