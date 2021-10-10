@@ -22,7 +22,6 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   while ((len = getline(&line, &sz, f)) >= 0) {
     line[len - 1] = '\0';
     // printf("%s\n", line);
-
     addCount(ans, (lookupValue(kvPairs, line)));
   }
   free(line);
@@ -42,19 +41,20 @@ int main(int argc, char ** argv) {
   //read the key/value pairs from the file named by argv[1] (call the result kv)
   kvarray_t * kv = readKVs(argv[1]);
   //count from 2 to argc (call the number you count i)
-  for (int i = 0; i < argc; i++) {
+  for (int i = 2; i < argc; i++) {
     counts_t * count = countFile(argv[i], kv);
     char * out = computeOutputFileName(argv[i]);
 
     FILE * f = fopen(out, "w");
     printCounts(count, f);
-    free(out);
-    free(count);
     if (fclose(f) != 0) {
       fprintf(stderr, "Cannot close the file");
     }
+
+    free(out);
+    freeCounts(count);
   }
-  free(kv);
+  freeKVs(kv);
   //count the values that appear in the file named by argv[i], using kv as the key/value pair
   //   (call this result c)
 
