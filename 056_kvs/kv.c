@@ -31,7 +31,12 @@ kvarray_t * readKVs(const char * fname) {
     size_t key_len = first_equal - line;
     char key[key_len + 1];
     memset(key, '\0', key_len + 1);
-    strncpy(key, line, key_len);
+    /* strncpy(key, line, key_len); */
+
+    for (size_t i = 0; i < key_len; i++) {
+      key[i] = line[i];
+    }
+    key[key_len] = '\0';
 
     if (line[len - 1] == '\n') {
       len--;
@@ -39,21 +44,24 @@ kvarray_t * readKVs(const char * fname) {
 
     size_t value_len = len - key_len - 1;
     char value[value_len + 1];
-    memset(value, '\0', key_len + 1);
+
+    //    memset(value, '\0', key_len + 1);
     strncpy(value, first_equal + 1, value_len);
 
     kv->pairs = realloc(kv->pairs, (kv_len + 1) * sizeof(*kv->pairs));
     kv->pairs[kv_len] = malloc(sizeof(*kv->pairs[kv_len]));
 
-    kv->pairs[kv_len]->key = malloc((key_len + 1) * sizeof((kv->pairs[kv_len]->key)));
-    memset(kv->pairs[kv_len]->key, '\0', key_len + 1);
-    kv->pairs[kv_len]->value =
-        malloc((value_len + 1) * sizeof((kv->pairs[kv_len]->value)));
-    memset(kv->pairs[kv_len]->value, '\0', value_len + 1);
+    /* kv->pairs[kv_len]->key = malloc((key_len + 1) * sizeof((kv->pairs[kv_len]->key))); */
+    /* memset(kv->pairs[kv_len]->key, '\0', key_len + 1); */
+    /* kv->pairs[kv_len]->value = */
+    /*     malloc((value_len + 1) * sizeof((kv->pairs[kv_len]->value))); */
+    /* memset(kv->pairs[kv_len]->value, '\0', value_len + 1); */
 
-    strncpy(kv->pairs[kv_len]->key, key, key_len);
-    strncpy(kv->pairs[kv_len]->value, value, value_len);
+    /* strncpy(kv->pairs[kv_len]->key, key, key_len); */
+    /* strncpy(kv->pairs[kv_len]->value, value, value_len); */
 
+    kv->pairs[kv_len]->key = strndup(key, key_len);
+    kv->pairs[kv_len]->value = strndup(value, value_len);
     kv_len++;
   }
 
