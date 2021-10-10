@@ -1,6 +1,6 @@
-Grading at 10/10/2021:01:42:50.417288
-For commit ID 8a17e34aa0708dd58aebc2438835efdb91158170
-Grading at Sat Oct  9 21:42:44 EDT 2021
+Grading at 10/10/2021:02:41:26.663794
+For commit ID 5420ab504f9d3fe7c84863470e539302cec7726b
+Grading at Sat Oct  9 22:41:21 EDT 2021
 Attempting to compile:
 rm -f  outname.o  counts.o  main.o  kv.o count_values *~
 gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 outname.c
@@ -29,19 +29,19 @@ Your file matched the expected output
 Comparing file list2a.txt.counts with answer
 Your output is correct
 Comparing file list2b.txt.counts with answer
-Line_4_did_not_match
-Your file did not match the expected output
-Your output is incorrect
+Your file matched the expected output
+Your output is correct
 Comparing file list2c.txt.counts with answer
 Your file matched the expected output
 Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase4:
-Line_5_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 Comparing file list3a.txt.counts with answer
 Your output is correct
   - Valgrind was clean (no errors, no memory leaks)
 valgrind was clean
 
-Overall Grade: B
+Overall Grade: A
