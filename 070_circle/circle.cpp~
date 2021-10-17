@@ -1,0 +1,21 @@
+#include "circle.hpp"
+
+#include <cmath>
+#include <cstdlib>
+
+Circle::Circle(Point setCenter, const double setRadius) :
+    center(setCenter),
+    radius(setRadius) {
+}
+
+void Circle::move(double dx, double dy) {
+  this->center.move(dx, dy);
+}
+
+double Circle::intersectionArea(const Circle & otherCircle) {
+  double R = this->radius;
+  double r = otherCircle.radius;
+  double d = std::abs(this->center.distanceFrom(otherCircle.center));
+  bool Var_constraints = ((R - r) < d) && (d < (r + R));
+  if ()
+}

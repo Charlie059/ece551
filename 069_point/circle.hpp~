@@ -1,0 +1,9 @@
+#ifndef CIRCLE_H
+#define CIRCLE_H
+#include "point.hpp"
+class Circle {
+ private:
+  Point
+}
+
+#endif
