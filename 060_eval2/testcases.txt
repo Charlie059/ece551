@@ -1,0 +1,2 @@
+#success
+story-step1 words.txt
