@@ -20,7 +20,7 @@ int main(int argc, char ** argv) {
   char * line = NULL;
 
   while ((len = getline(&line, &sz, f)) >= 0) {
-    line = parseHelper(line, len);
+    line = parseHelper(line, len, NULL, NULL);
     fprintf(stdout, "%s", line);
   }
   free(line);

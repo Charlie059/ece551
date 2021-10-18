@@ -1,16 +1,52 @@
 #include "rand_story.h"
 
 #include <assert.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 #include "provided.h"
 #include "string.h"
 
-char * parseHelper(char * line, size_t len) {
+void initTracker(category_t * tracker) {
+  tracker->name = NULL;
+  tracker->n_words = 0;
+  tracker->words = NULL;
+}
+
+void readWordFile(FILE * f, catarray_t * catArr) {
+  size_t sz = 0;
+  ssize_t len = 0;
+  char * line = NULL;
+
+  //init catArr
+  catArr->n = 0;
+  catArr->arr = NULL;
+
+  while ((len = getline(&line, &sz, f)) >= 0) {
+    readWords(line, len, catArr);
+  }
+
+  free(line);
+}
+
+void readStoryFile(FILE * f, catarray_t * catArr, category_t * tracker) {
+  size_t sz = 0;
+  ssize_t len = 0;
+  char * line = NULL;
+
+  while ((len = getline(&line, &sz, f)) >= 0) {
+    line = parseHelper(line, len, catArr, tracker);
+    fprintf(stdout, "%s", line);
+  }
+
+  free(line);
+}
+
+char * parseHelper(char * line, size_t len, catarray_t * catArr, category_t * tracker) {
   int * idx = NULL;
   while ((idx = checkStory(line, len)) != NULL) {
-    line = parseStory(line, len, idx);
+    line = parseStory(line, len, idx, catArr, tracker);
     free(idx);
   }
   return line;
@@ -45,11 +81,32 @@ int * checkStory(const char * line, size_t length) {
 }
 
 /*Parse one word in the current line*/
-char * parseStory(char * line, size_t len, int * idx) {
+char * parseStory(char * line,
+                  size_t len,
+                  int * idx,
+                  catarray_t * catArr,
+                  category_t * tracker) {
   char * firstString = strndup(line, idx[0]);
-  char * myWord = getStory(line, idx);
-  const char * word = chooseWord(myWord, NULL);
   char * secondString = strndup(line + idx[1] + 1, len - idx[1] - 1);
+  char * myWord = getStory(line, idx);
+  const char * word = NULL;
+  // if myWord is a digit >= 1 ..
+
+  char * endPtr = NULL;
+  if ((strtol(myWord, &endPtr, 10)) >= 1 &&
+      ((unsigned long)(endPtr - myWord) == strlen(myWord))) {
+    int trackIdx = strtol(myWord, &endPtr, 10);
+    word = tracker->words[tracker->n_words - trackIdx];
+  }
+  else {
+    word = chooseWord(myWord, catArr);
+  }
+
+  // track the word
+  tracker->words =
+      realloc(tracker->words, (1 + tracker->n_words) * sizeof(*tracker->words));
+  tracker->words[tracker->n_words] = strdup(word);
+  tracker->n_words++;
 
   size_t first_str_len = strlen(firstString);
   size_t word_len = strlen(word);
@@ -165,4 +222,11 @@ void freeCatarry(catarray_t * catArr) {
   free(catArr->arr);
 
   free(catArr);
+}
+
+void freeTrackerArr(category_t * tracker) {
+  for (size_t i = 0; i < tracker->n_words; i++) {
+    free(tracker->words[i]);
+  }
+  free(tracker->words);
 }
