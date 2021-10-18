@@ -1,2 +1,3 @@
 #success
-story-step1 words.txt
+story-step1 story.txt
+story-step2 words.txt

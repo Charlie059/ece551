@@ -1,5 +1,6 @@
 #include "rand_story.h"
 
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,15 +9,15 @@
 
 char * parseHelper(char * line, size_t len) {
   int * idx = NULL;
-  while ((idx = checkWord(line, len)) != NULL) {
-    line = parseWord(line, len, idx);
+  while ((idx = checkStory(line, len)) != NULL) {
+    line = parseStory(line, len, idx);
     free(idx);
   }
   return line;
 }
 
 /*Check if there exist a word to replace, if exist, return idx*/
-int * checkWord(const char * line, size_t length) {
+int * checkStory(const char * line, size_t length) {
   const char * first_idx = strchr(line, '_');
   const char * second_idx = NULL;
   int first_idx_ = 0;
@@ -44,9 +45,9 @@ int * checkWord(const char * line, size_t length) {
 }
 
 /*Parse one word in the current line*/
-char * parseWord(char * line, size_t len, int * idx) {
+char * parseStory(char * line, size_t len, int * idx) {
   char * firstString = strndup(line, idx[0]);
-  char * myWord = getWord(line, idx);
+  char * myWord = getStory(line, idx);
   const char * word = chooseWord(myWord, NULL);
   char * secondString = strndup(line + idx[1] + 1, len - idx[1] - 1);
 
@@ -74,7 +75,7 @@ char * parseWord(char * line, size_t len, int * idx) {
 
   return line;
 }
-char * getWord(const char * line, int * idx) {
+char * getStory(const char * line, int * idx) {
   int first_idx = idx[0];
   int second_idx = idx[1];
   size_t length = second_idx - first_idx;
@@ -91,4 +92,77 @@ char * getWord(const char * line, int * idx) {
 void printError(const char * error) {
   fprintf(stderr, "%s\n", error);
   exit(EXIT_FAILURE);
+}
+
+// Read the words.txt
+void readWords(char * line, size_t len, catarray_t * currentCatArr) {
+  //Read the category and name
+  char * colon = strchr(line, ':');
+  assert(colon != NULL);
+  size_t nameLen = colon - line;
+  assert(nameLen < len);
+  char * name = strndup(line, nameLen);
+
+  char * nextLinePtr = strchr(colon + 1, '\n');
+  assert(nextLinePtr != NULL);
+
+  size_t wordLen = nextLinePtr - colon - 1;
+  char * word = strndup(colon + 1, wordLen);
+
+  int idx = readCategory(name, currentCatArr);
+  //Check if the category is exist
+  if (idx != -1) {
+    //if exist, add to the current category
+
+    currentCatArr->arr[idx].words = realloc(
+        currentCatArr->arr[idx].words,
+        (currentCatArr->arr[idx].n_words + 1) * sizeof(*currentCatArr->arr[idx].words));
+    //add
+    currentCatArr->arr[idx].words[currentCatArr->arr[idx].n_words] = word;
+    //update
+    currentCatArr->arr[idx].n_words++;
+    free(name);
+  }
+  else {
+    //if not, create a new category and link to the catarray_t
+    currentCatArr->arr =
+        realloc(currentCatArr->arr, (currentCatArr->n + 1) * sizeof(*currentCatArr->arr));
+
+    //set name
+    currentCatArr->arr[currentCatArr->n].name = name;
+    //set words
+    currentCatArr->arr[currentCatArr->n].words =
+        malloc(sizeof(*currentCatArr->arr[currentCatArr->n].words));
+    currentCatArr->arr[currentCatArr->n].words[0] = word;
+    //set n_words
+    currentCatArr->arr[currentCatArr->n].n_words = 1;
+
+    //update n
+    currentCatArr->n++;
+  }
+}
+
+// Read the category from the line and check if this category exist
+// then return the idx of category
+int readCategory(char * name, catarray_t * currentCatArr) {
+  for (size_t i = 0; i < currentCatArr->n; i++) {
+    char * currentName = currentCatArr->arr[i].name;
+    if (strcmp(currentName, name) == 0) {
+      return i;  // return idx if find
+    }
+  }
+  return -1;  //return -1 if not find
+}
+
+void freeCatarry(catarray_t * catArr) {
+  for (size_t i = 0; i < catArr->n; i++) {
+    for (size_t j = 0; j < catArr->arr[i].n_words; j++) {
+      free(catArr->arr[i].words[j]);
+    }
+    free(catArr->arr[i].words);
+    free(catArr->arr[i].name);
+  }
+  free(catArr->arr);
+
+  free(catArr);
 }
