@@ -37,6 +37,7 @@ int main(int argc, char ** argv) {
 
   freeCatarry(catArr, n_wordsArr);
   free(line);
+  free(n_wordsArr);
 
   if (fclose(f) != 0) {
     printError("Cannot close file.");
