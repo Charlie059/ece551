@@ -13,12 +13,7 @@ int main(int argc, char ** argv) {
     perror("Cannot open this file");
     EXIT_FAILURE;
   }
-
-  //category_t * tracker = malloc(sizeof(*tracker));
-  readStoryFile(f, NULL, NULL);
-
-  //free
-  //freeTrackerArr(tracker);
+  readStoryFile(f, NULL, NULL, 0);
 
   if (fclose(f) != 0) {
     printError("Cannot close file.");

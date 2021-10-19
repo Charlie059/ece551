@@ -7,11 +7,12 @@
 
 int main(int argc, char ** argv) {
   if (argc != 3) {
-    printError("Expect three arg (including name).");
+    printError("Expect three or four arg (including name).");
   }
 
   FILE * f_word = fopen(argv[1], "r");
   FILE * f_story = fopen(argv[2], "r");
+
   if (f_word == NULL || f_story == NULL) {
     printError("Cannot open the file");
     EXIT_FAILURE;
@@ -25,13 +26,20 @@ int main(int argc, char ** argv) {
   catarray_t * catArr = malloc(sizeof(*catArr));
   readWordFile(f_word, catArr);
 
+  // record the n_words array
+  size_t * n_wordsArr = malloc(catArr->n * sizeof(*n_wordsArr));
+  for (size_t i = 0; i < catArr->n; i++) {
+    n_wordsArr[i] = catArr->arr[i].n_words;
+  }
+
   /*  READ STORY FILE */
-  readStoryFile(f_story, catArr, tracker);
+  readStoryFile(f_story, catArr, tracker, 0);
 
   // free
-  freeCatarry(catArr);
+  freeCatarry(catArr, n_wordsArr);
   freeTrackerArr(tracker);
   free(tracker);
+  free(n_wordsArr);
 
   if (fclose(f_story) != 0) {
     printError("Cannot close file.");

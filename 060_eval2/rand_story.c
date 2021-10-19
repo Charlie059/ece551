@@ -30,13 +30,13 @@ void readWordFile(FILE * f, catarray_t * catArr) {
   free(line);
 }
 
-void readStoryFile(FILE * f, catarray_t * catArr, category_t * tracker) {
+void readStoryFile(FILE * f, catarray_t * catArr, category_t * tracker, int mode) {
   size_t sz = 0;
   ssize_t len = 0;
   char * line = NULL;
 
   while ((len = getline(&line, &sz, f)) >= 0) {
-    line = parseHelper(line, len, catArr, tracker);
+    line = parseHelper(line, len, catArr, tracker, mode);
     fprintf(stdout, "%s", line);
     free(
         line);  // Because we realloc the line in parseHeler (getline will have the invaild write and read), we need to free it in each iter.
@@ -45,10 +45,14 @@ void readStoryFile(FILE * f, catarray_t * catArr, category_t * tracker) {
   free(line);
 }
 
-char * parseHelper(char * line, size_t len, catarray_t * catArr, category_t * tracker) {
+char * parseHelper(char * line,
+                   size_t len,
+                   catarray_t * catArr,
+                   category_t * tracker,
+                   int mode) {
   int * idx = NULL;
   while ((idx = checkStory(line, len)) != NULL) {
-    line = parseStory(line, len, idx, catArr, tracker);
+    line = parseStory(line, len, idx, catArr, tracker, mode);
     free(idx);
   }
   return line;
@@ -87,11 +91,13 @@ char * parseStory(char * line,
                   size_t len,
                   int * idx,
                   catarray_t * catArr,
-                  category_t * tracker) {
+                  category_t * tracker,
+                  int mode) {
   char * firstString = strndup(line, idx[0]);
   char * secondString = strndup(line + idx[1] + 1, strlen(line) - idx[1] - 1);
   char * myWord = getStory(line, idx);
   const char * word = NULL;
+  char * word_ = NULL;
   // if myWord is a digit >= 1 ..
 
   char * endPtr = NULL;
@@ -100,21 +106,31 @@ char * parseStory(char * line,
     int trackIdx = strtol(myWord, &endPtr, 10);
     assert(tracker->n_words - trackIdx >= 0);
     word = tracker->words[tracker->n_words - trackIdx];
+    word_ = strdup(word);
   }
   else {
     word = chooseWord(myWord, catArr);
+    assert(word != NULL);
+
+    word_ = strdup(word);
+
+    if (mode == 1) {
+      rmCatArr(myWord, word, catArr);
+    }
+
+    //    printf("__%s__\n", word);
   }
 
   // track the word
   if (tracker != NULL) {
     tracker->words =
         realloc(tracker->words, (1 + tracker->n_words) * sizeof(*tracker->words));
-    tracker->words[tracker->n_words] = strdup(word);
+    tracker->words[tracker->n_words] = strdup(word_);
     tracker->n_words++;
   }
 
   size_t first_str_len = strlen(firstString);
-  size_t word_len = strlen(word);
+  size_t word_len = strlen(word_);
   size_t second_str_len = strlen(secondString);
   size_t new_len = first_str_len + word_len + second_str_len;
 
@@ -137,7 +153,7 @@ char * parseStory(char * line,
   }
 
   for (size_t i = 0; i < word_len; i++) {
-    line[i + first_str_len] = word[i];
+    line[i + first_str_len] = word_[i];
   }
 
   for (size_t i = 0; i < second_str_len; i++) {
@@ -148,6 +164,7 @@ char * parseStory(char * line,
   free(firstString);
   free(secondString);
   free(myWord);
+  free(word_);
 
   return line;
 }
@@ -230,10 +247,13 @@ int readCategory(char * name, catarray_t * currentCatArr) {
   return -1;  //return -1 if not find
 }
 
-void freeCatarry(catarray_t * catArr) {
+void freeCatarry(catarray_t * catArr, size_t * n_wordsArr) {
   for (size_t i = 0; i < catArr->n; i++) {
-    for (size_t j = 0; j < catArr->arr[i].n_words; j++) {
-      free(catArr->arr[i].words[j]);
+    //BUG TODO n_words: 4 ~ 1 2 3 null 4
+    for (size_t j = 0; j < n_wordsArr[i]; j++) {
+      if (catArr->arr[i].words[j] != NULL) {
+        free(catArr->arr[i].words[j]);
+      }
     }
     free(catArr->arr[i].words);
     free(catArr->arr[i].name);
@@ -248,4 +268,31 @@ void freeTrackerArr(category_t * tracker) {
     free(tracker->words[i]);
   }
   free(tracker->words);
+}
+
+void rmCatArr(char * myWord, const char * word, catarray_t * currentCatArr) {
+  assert(myWord != NULL);
+  assert(word != NULL);
+  assert(currentCatArr != NULL);
+  // find cateIdx idx
+  int cateIdx = readCategory(myWord, currentCatArr);
+  int wordsIdx = 0;
+  // find word idx given cateIdx
+  for (size_t i = 0; i < currentCatArr->arr[cateIdx].n_words; i++) {
+    if (currentCatArr->arr[cateIdx].words[i] != NULL) {
+      if (strcmp(currentCatArr->arr[cateIdx].words[i], word) == 0) {
+        wordsIdx = i;
+        break;
+      }
+    }
+  }
+
+  // remove the word
+  free(currentCatArr->arr[cateIdx].words[wordsIdx]);
+  currentCatArr->arr[cateIdx].words[wordsIdx] = NULL;
+
+  // update the category
+
+  currentCatArr->arr[cateIdx].n_words--;
+  assert(currentCatArr->arr[cateIdx].n_words >= 0);
 }

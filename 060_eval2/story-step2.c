@@ -29,7 +29,13 @@ int main(int argc, char ** argv) {
 
   printWords(catArr);
 
-  freeCatarry(catArr);
+  // record the n_words array
+  size_t * n_wordsArr = malloc(catArr->n * sizeof(*n_wordsArr));
+  for (size_t i = 0; i < catArr->n; i++) {
+    n_wordsArr[i] = catArr->arr[i].n_words;
+  }
+
+  freeCatarry(catArr, n_wordsArr);
   free(line);
 
   if (fclose(f) != 0) {
