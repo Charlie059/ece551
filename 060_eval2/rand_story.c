@@ -38,8 +38,10 @@ void readStoryFile(FILE * f, catarray_t * catArr, category_t * tracker) {
   while ((len = getline(&line, &sz, f)) >= 0) {
     line = parseHelper(line, len, catArr, tracker);
     fprintf(stdout, "%s", line);
+    free(
+        line);  // Because we realloc the line in parseHeler (getline will have the invaild write and read), we need to free it in each iter.
+    line = NULL;
   }
-
   free(line);
 }
 
@@ -87,7 +89,7 @@ char * parseStory(char * line,
                   catarray_t * catArr,
                   category_t * tracker) {
   char * firstString = strndup(line, idx[0]);
-  char * secondString = strndup(line + idx[1] + 1, len - idx[1] - 1);
+  char * secondString = strndup(line + idx[1] + 1, strlen(line) - idx[1] - 1);
   char * myWord = getStory(line, idx);
   const char * word = NULL;
   // if myWord is a digit >= 1 ..
@@ -96,6 +98,7 @@ char * parseStory(char * line,
   if ((strtol(myWord, &endPtr, 10)) >= 1 &&
       ((unsigned long)(endPtr - myWord) == strlen(myWord))) {
     int trackIdx = strtol(myWord, &endPtr, 10);
+    assert(tracker->n_words - trackIdx >= 0);
     word = tracker->words[tracker->n_words - trackIdx];
   }
   else {
@@ -113,17 +116,31 @@ char * parseStory(char * line,
   size_t second_str_len = strlen(secondString);
   size_t new_len = first_str_len + word_len + second_str_len;
 
-  free(line);
-  line = NULL;
+  //free(line);
+  // line = NULL;
   line = realloc(line, (new_len + 1) * sizeof(*line));
 
   for (size_t i = 0; i < new_len + 1; i++) {
     line[i] = '\0';
   }
 
-  strcat(line, firstString);
-  strcat(line, word);
-  strcat(line, secondString);
+  //  line[0] = '\0';
+
+  /* strcat(line, firstString); */
+  /* strcat(line, word); */
+  /* strcat(line, secondString); */
+
+  for (size_t i = 0; i < first_str_len; i++) {
+    line[i] = firstString[i];
+  }
+
+  for (size_t i = 0; i < word_len; i++) {
+    line[i + first_str_len] = word[i];
+  }
+
+  for (size_t i = 0; i < second_str_len; i++) {
+    line[i + first_str_len + word_len] = secondString[i];
+  }
 
   // free
   free(firstString);
