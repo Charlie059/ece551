@@ -14,16 +14,11 @@ int main(int argc, char ** argv) {
     EXIT_FAILURE;
   }
 
-  /*  READ FILE */
-  size_t sz = 0;
-  ssize_t len = 0;
-  char * line = NULL;
+  //category_t * tracker = malloc(sizeof(*tracker));
+  readStoryFile(f, NULL, NULL);
 
-  while ((len = getline(&line, &sz, f)) >= 0) {
-    line = parseHelper(line, len, NULL, NULL);
-    fprintf(stdout, "%s", line);
-  }
-  free(line);
+  //free
+  //freeTrackerArr(tracker);
 
   if (fclose(f) != 0) {
     printError("Cannot close file.");

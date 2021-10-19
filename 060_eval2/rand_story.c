@@ -96,7 +96,7 @@ char * parseStory(char * line,
 
   char * endPtr = NULL;
   if ((strtol(myWord, &endPtr, 10)) >= 1 &&
-      ((unsigned long)(endPtr - myWord) == strlen(myWord))) {
+      ((unsigned long)(endPtr - myWord) == strlen(myWord)) && tracker != NULL) {
     int trackIdx = strtol(myWord, &endPtr, 10);
     assert(tracker->n_words - trackIdx >= 0);
     word = tracker->words[tracker->n_words - trackIdx];
@@ -106,10 +106,12 @@ char * parseStory(char * line,
   }
 
   // track the word
-  tracker->words =
-      realloc(tracker->words, (1 + tracker->n_words) * sizeof(*tracker->words));
-  tracker->words[tracker->n_words] = strdup(word);
-  tracker->n_words++;
+  if (tracker != NULL) {
+    tracker->words =
+        realloc(tracker->words, (1 + tracker->n_words) * sizeof(*tracker->words));
+    tracker->words[tracker->n_words] = strdup(word);
+    tracker->n_words++;
+  }
 
   size_t first_str_len = strlen(firstString);
   size_t word_len = strlen(word);
