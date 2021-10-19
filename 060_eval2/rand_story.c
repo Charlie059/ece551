@@ -333,9 +333,16 @@ void rmCatArr(char * myWord, const char * word, catarray_t * currentCatArr) {
       }
     }
   }
+
+  //BUG
   // remove the word from that category
   free(currentCatArr->arr[cateIdx].words[wordsIdx]);
-  currentCatArr->arr[cateIdx].words[wordsIdx] = NULL;
+
+  for (size_t i = 0; i < currentCatArr->arr[cateIdx].n_words - wordsIdx - 1; i++) {
+    currentCatArr->arr[cateIdx].words[wordsIdx] =
+        currentCatArr->arr[cateIdx].words[wordsIdx + 1];
+  }
+  currentCatArr->arr[cateIdx].words[currentCatArr->arr[cateIdx].n_words - 1] = NULL;
   // update the category
   currentCatArr->arr[cateIdx].n_words--;
   assert(currentCatArr->arr[cateIdx].n_words >= 0);
