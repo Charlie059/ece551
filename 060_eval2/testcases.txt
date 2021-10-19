@@ -8,4 +8,4 @@ story-step4 words.txt story2.txt
 story-step4 words.txt story.txt
 story-step4 -n words.txt story.txt
 story-step4 -n  words.txt story2.txt
-
+story-step4 -n words.txt story_rm.txt
