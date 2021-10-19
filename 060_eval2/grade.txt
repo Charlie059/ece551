@@ -1,6 +1,6 @@
-Grading at 10/19/2021:21:26:29.256479
-For commit ID 6bf2116c6db179810f55482cf9727375adedb863
-Grading at Tue Oct 19 17:26:21 EDT 2021
+Grading at 10/19/2021:21:36:49.816827
+For commit ID 2f67a8165e0608383cb4ac7caa9710b1946bfb0f
+Grading at Tue Oct 19 17:36:42 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -53,15 +53,13 @@ Test case story-step4 words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step4 -n words.txt story.txt
-Your file matched the expected output
+Valgrind reported memory errors
 +-----------------------------------------------------------------------+
 Test case story-step4 -n words.txt story2.txt
-Your file matched the expected output
+Valgrind reported memory errors
 +-----------------------------------------------------------------------+
 Test case story-step4 -n words.txt story_rm.txt
-Line_1_did_not_match
-Line_2_did_not_match
-Your file did not match the expected output
+Valgrind reported memory errors
 
 You have FAILED one or more of your test cases
 Keep debugging
