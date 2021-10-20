@@ -102,7 +102,7 @@ int * checkStory(const char * line, size_t length) {
     return NULL;
   }
   else {
-    if ((size_t)(first_idx - line + 1) < length) {
+    if ((size_t)(first_idx - line + 1) < strlen(line)) {
       second_idx = strchr(first_idx + 1, '_');
     }
     if (second_idx == NULL) {  // If have 1st and not 2nd, return error
