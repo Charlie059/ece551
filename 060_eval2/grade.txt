@@ -1,6 +1,6 @@
-Grading at 10/20/2021:05:41:51.689741
-For commit ID 85e36ada100f3fdb4df71bd295f2c1b2eba1b4fb
-Grading at Wed Oct 20 01:41:27 EDT 2021
+Grading at 10/20/2021:17:16:10.824917
+For commit ID 67746301e2ccbd22540502207259922344e8050e
+Grading at Wed Oct 20 13:15:47 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -10,7 +10,7 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
 gcc -o story-step1 story-step1.o rand_story.o provided.o
 rm story-step1.o
 +-----------------------------------------------------------------------+
-Test case story-step1 n1.txt
+Test case 1 (error): story-step1 n1.txt
 Your program successfully indicated a failure case
 
 Compiling story-step2
@@ -20,7 +20,7 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
 gcc -o story-step2 story-step2.o rand_story.o provided.o
 rm story-step2.o
 +-----------------------------------------------------------------------+
-Test case story-step2 nw3.txt
+Test case 2 (error): story-step2 nw3.txt
 Your program successfully indicated a failure case
 
 Compiling story-step4
@@ -30,10 +30,10 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
 gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
-Test case story-step4 -n words2.txt story4.txt
+Test case 3 (error): story-step4 -n words2.txt story4.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case story-step4 -n words.txt story3.txt
+Test case 4 (error): story-step4 -n words.txt story3.txt
 Your program successfully indicated a failure case
 
 Compiling story-step3
@@ -43,7 +43,7 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
 gcc -o story-step3 story-step3.o rand_story.o provided.o
 rm story-step3.o
 +-----------------------------------------------------------------------+
-Test case story-step3 words.txt a0.txt
+Test case 5 (error): story-step3 words.txt a0.txt
 Your program successfully indicated a failure case
 
 Compiling story-step4
@@ -53,16 +53,16 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
 gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
-Test case story-step4 words.txt a0.txt
+Test case 6 (error): story-step4 words.txt a0.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case story-step4 -n words.txt a0.txt
+Test case 7 (error): story-step4 -n words.txt a0.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case story-step4 -n words4.txt story5.txt
+Test case 8 (success): story-step4 -n words4.txt story5.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step4 words4.txt story5.txt
+Test case 9 (success): story-step4 words4.txt story5.txt
 Your file matched the expected output
 
 Compiling story-step1
@@ -72,31 +72,31 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
 gcc -o story-step1 story-step1.o rand_story.o provided.o
 rm story-step1.o
 +-----------------------------------------------------------------------+
-Test case story-step1 story.txt
+Test case 10 (success): story-step1 story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step1 story2.txt
+Test case 11 (success): story-step1 story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step1 story3.txt
+Test case 12 (success): story-step1 story3.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step1 s1.txt
+Test case 13 (success): story-step1 s1.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step1 s2.txt
+Test case 14 (success): story-step1 s2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step1 s3.txt
+Test case 15 (success): story-step1 s3.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step1 s4.txt
+Test case 16 (success): story-step1 s4.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step1 s5.txt
+Test case 17 (success): story-step1 s5.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step1 s6.txt
+Test case 18 (success): story-step1 s6.txt
 Your file matched the expected output
 
 Compiling story-step2
@@ -106,16 +106,16 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
 gcc -o story-step2 story-step2.o rand_story.o provided.o
 rm story-step2.o
 +-----------------------------------------------------------------------+
-Test case story-step2 w1.txt
+Test case 19 (success): story-step2 w1.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step2 w2.txt
+Test case 20 (success): story-step2 w2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step2 w3.txt
+Test case 21 (success): story-step2 w3.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step2 w4.txt
+Test case 22 (success): story-step2 w4.txt
 Your file matched the expected output
 
 Compiling story-step4
@@ -125,10 +125,10 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
 gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
-Test case story-step4 words2.txt story3.txt
+Test case 23 (success): story-step4 words2.txt story3.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step4 -n words2.txt story3.txt
+Test case 24 (success): story-step4 -n words2.txt story3.txt
 Your file matched the expected output
 
 Compiling story-step2
@@ -138,7 +138,7 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
 gcc -o story-step2 story-step2.o rand_story.o provided.o
 rm story-step2.o
 +-----------------------------------------------------------------------+
-Test case story-step2 w10.txt
+Test case 25 (success): story-step2 w10.txt
 Your file matched the expected output
 
 Compiling story-step3
@@ -148,10 +148,10 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
 gcc -o story-step3 story-step3.o rand_story.o provided.o
 rm story-step3.o
 +-----------------------------------------------------------------------+
-Test case story-step3 words.txt story.txt
+Test case 26 (success): story-step3 words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step3 words.txt story2.txt
+Test case 27 (success): story-step3 words.txt story2.txt
 Your file matched the expected output
 
 Compiling story-step4
@@ -161,19 +161,19 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
 gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
-Test case story-step4 words.txt story2.txt
+Test case 28 (success): story-step4 words.txt story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step4 -n words.txt story2.txt
+Test case 29 (success): story-step4 -n words.txt story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step4 -n words.txt story.txt
+Test case 30 (success): story-step4 -n words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step4 words.txt story.txt
+Test case 31 (success): story-step4 words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case story-step4 words.txt story2.txt
+Test case 32 (success): story-step4 words.txt story2.txt
 Your file matched the expected output
 
 You have PASSED all of your test cases
