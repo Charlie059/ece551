@@ -1,0 +1,16 @@
+color:red
+color:green
+car:1W
+color:b00lue
+car:2W
+color:124"244"343
+color:pink
+color:12:232
+color:dark
+color:black
+car:100W
+laptop:apple
+laptop:sum
+laptop:samg
+laptop:lenove
+car:10W
