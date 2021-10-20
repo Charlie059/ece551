@@ -1,4 +1,15 @@
 #success
+story-step1 s1.txt
+story-step1 s2.txt
+story-step1 s3.txt
+story-step1 s4.txt
+story-step1 s5.txt
+story-step1 s6.txt
+story-step1 s7.txt
+story-step1 s8.txt
+story-step1 s9.txt
+story-step1 s10.txt
+story-step1 s11.txt
 story-step1 story.txt
 story-step1 story2.txt
 story-step2 words.txt
