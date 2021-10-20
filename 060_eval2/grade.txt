@@ -1,6 +1,6 @@
-Grading at 10/20/2021:04:01:40.619110
-For commit ID 183e9e76d79793ab3254f0653a74722a4756ff3a
-Grading at Wed Oct 20 00:01:38 EDT 2021
+Grading at 10/20/2021:04:04:01.014978
+For commit ID 7721e718e126d3cd1c596cd879924f4723784ea9
+Grading at Wed Oct 20 00:03:58 EDT 2021
 Running your test cases
 
 Compiling story-step3
@@ -11,9 +11,7 @@ gcc -o story-step3 story-step3.o rand_story.o provided.o
 rm story-step3.o
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt a0.txt
-Once upon a time, there was a dwd. This dwd lived in a very
-scary cave. One day, it left its scary cave and met a walrus.
-Your program did not indicate a failure case
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story.txt
 Your file matched the expected output
@@ -21,7 +19,7 @@ Your file matched the expected output
 Test case story-step3 words.txt story2.txt
 Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
