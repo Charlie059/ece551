@@ -21,9 +21,15 @@ IntArray::IntArray(const IntArray & rhs) :
   }
 }
 IntArray::~IntArray() {
+  delete[] data;
 }
 
 IntArray & IntArray::operator=(const IntArray & rhs) {
+
+  if(this != &rhs){
+    
+  }
+
 }
 const int & IntArray::operator[](int index) const {
 }
