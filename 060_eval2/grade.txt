@@ -1,6 +1,6 @@
-Grading at 10/20/2021:19:29:26.023377
-For commit ID ce63627f9cebb50937ee5c1f639dfb891f2ceb45
-Grading at Wed Oct 20 15:29:00 EDT 2021
+Grading at 10/20/2021:19:36:37.453084
+For commit ID 2c6979bf658267e998366d5e92c99e65b36a9310
+Grading at Wed Oct 20 15:36:13 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -58,29 +58,11 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 7 (error): story-step4 -n words.txt a0.txt
 Your program successfully indicated a failure case
-
-Compiling story-step2
-rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
-gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
-gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
-gcc -o story-step2 story-step2.o rand_story.o provided.o
-rm story-step2.o
 +-----------------------------------------------------------------------+
-Test case 8 (success): story-step2 nw8.txt
-Line_1_did_not_match
-Your file did not match the expected output
-
-Compiling story-step4
-rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
-gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
-gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
-gcc -o story-step4 story-step4.o rand_story.o provided.o
-rm story-step4.o
-+-----------------------------------------------------------------------+
-Test case 9 (success): story-step4 -n words4.txt story5.txt
+Test case 8 (success): story-step4 -n words4.txt story5.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 10 (success): story-step4 words4.txt story5.txt
+Test case 9 (success): story-step4 words4.txt story5.txt
 Your file matched the expected output
 
 Compiling story-step1
@@ -90,31 +72,31 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
 gcc -o story-step1 story-step1.o rand_story.o provided.o
 rm story-step1.o
 +-----------------------------------------------------------------------+
-Test case 11 (success): story-step1 story.txt
+Test case 10 (success): story-step1 story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 12 (success): story-step1 story2.txt
+Test case 11 (success): story-step1 story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 13 (success): story-step1 story3.txt
+Test case 12 (success): story-step1 story3.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 14 (success): story-step1 s1.txt
+Test case 13 (success): story-step1 s1.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 15 (success): story-step1 s2.txt
+Test case 14 (success): story-step1 s2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 16 (success): story-step1 s3.txt
+Test case 15 (success): story-step1 s3.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 17 (success): story-step1 s4.txt
+Test case 16 (success): story-step1 s4.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 18 (success): story-step1 s5.txt
+Test case 17 (success): story-step1 s5.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 19 (success): story-step1 s6.txt
+Test case 18 (success): story-step1 s6.txt
 Your file matched the expected output
 
 Compiling story-step2
@@ -124,16 +106,16 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
 gcc -o story-step2 story-step2.o rand_story.o provided.o
 rm story-step2.o
 +-----------------------------------------------------------------------+
-Test case 20 (success): story-step2 w1.txt
+Test case 19 (success): story-step2 w1.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 21 (success): story-step2 w2.txt
+Test case 20 (success): story-step2 w2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 22 (success): story-step2 w3.txt
+Test case 21 (success): story-step2 w3.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 23 (success): story-step2 w4.txt
+Test case 22 (success): story-step2 w4.txt
 Your file matched the expected output
 
 Compiling story-step4
@@ -143,10 +125,10 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
 gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
-Test case 24 (success): story-step4 words2.txt story3.txt
+Test case 23 (success): story-step4 words2.txt story3.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 25 (success): story-step4 -n words2.txt story3.txt
+Test case 24 (success): story-step4 -n words2.txt story3.txt
 Your file matched the expected output
 
 Compiling story-step2
@@ -156,7 +138,7 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
 gcc -o story-step2 story-step2.o rand_story.o provided.o
 rm story-step2.o
 +-----------------------------------------------------------------------+
-Test case 26 (success): story-step2 w10.txt
+Test case 25 (success): story-step2 w10.txt
 Your file matched the expected output
 
 Compiling story-step3
@@ -166,10 +148,10 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
 gcc -o story-step3 story-step3.o rand_story.o provided.o
 rm story-step3.o
 +-----------------------------------------------------------------------+
-Test case 27 (success): story-step3 words.txt story.txt
+Test case 26 (success): story-step3 words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 28 (success): story-step3 words.txt story2.txt
+Test case 27 (success): story-step3 words.txt story2.txt
 Your file matched the expected output
 
 Compiling story-step4
@@ -179,22 +161,22 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
 gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
-Test case 29 (success): story-step4 words.txt story2.txt
+Test case 28 (success): story-step4 words.txt story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 30 (success): story-step4 -n words.txt story2.txt
+Test case 29 (success): story-step4 -n words.txt story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 31 (success): story-step4 -n words.txt story.txt
+Test case 30 (success): story-step4 -n words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 32 (success): story-step4 words.txt story.txt
+Test case 31 (success): story-step4 words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 33 (success): story-step4 words.txt story2.txt
+Test case 32 (success): story-step4 words.txt story2.txt
 Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
