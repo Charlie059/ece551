@@ -287,14 +287,8 @@ int readCategory(char * name, catarray_t * currentCatArr) {
 
 // Free the catarr
 void freeCatarry(catarray_t * catArr, size_t * n_wordsArr) {
-  // n_wordArr is orginal n_word when read the words.txt
-  // because we may delete some category's word (set to NULL)
-  // we will lost some idx so we use n_wordsArr
-  // For example:
-  // n_words = 4 : a, b, c, NULL, d
-  // If we use n_word, we cannot free the d
   for (size_t i = 0; i < catArr->n; i++) {
-    for (size_t j = 0; j < n_wordsArr[i]; j++) {
+    for (size_t j = 0; j < catArr->arr[i].n_words; j++) {
       if (catArr->arr[i].words[j] != NULL) {
         free(catArr->arr[i].words[j]);
       }
@@ -335,13 +329,15 @@ void rmCatArr(char * myWord, const char * word, catarray_t * currentCatArr) {
   }
 
   //BUG
-  // remove the word from that category
+
+  /*  remove the word from that category */
   free(currentCatArr->arr[cateIdx].words[wordsIdx]);
 
   for (size_t i = 0; i < currentCatArr->arr[cateIdx].n_words - wordsIdx - 1; i++) {
-    currentCatArr->arr[cateIdx].words[wordsIdx] =
-        currentCatArr->arr[cateIdx].words[wordsIdx + 1];
+    currentCatArr->arr[cateIdx].words[wordsIdx + i] =
+        (currentCatArr->arr[cateIdx].words[wordsIdx + 1 + i]);
   }
+
   currentCatArr->arr[cateIdx].words[currentCatArr->arr[cateIdx].n_words - 1] = NULL;
   // update the category
   currentCatArr->arr[cateIdx].n_words--;
