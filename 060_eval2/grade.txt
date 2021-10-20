@@ -1,6 +1,6 @@
-Grading at 10/20/2021:02:14:24.939192
-For commit ID 4d910d2b39e3c73e15650a6ae4c32f8d617d419f
-Grading at Tue Oct 19 22:13:51 EDT 2021
+Grading at 10/20/2021:02:34:19.779210
+For commit ID cefdeab91d03d4f2f1910a8901c4ff77bf3fb054
+Grading at Tue Oct 19 22:33:39 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -163,6 +163,33 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
 gcc -o story-step2 story-step2.o rand_story.o provided.o
 rm story-step2.o
++-----------------------------------------------------------------------+
+Test case story-step2 w1.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step2 w2.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step2 w3.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step2 w4.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step2 w5.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step2 w6.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step2 w7.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step2 w8.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step2 w9.txt
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step2 words.txt
 Your file matched the expected output
