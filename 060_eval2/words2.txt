@@ -1,0 +1,16 @@
+animal:dragon
+animal:walrus
+animal:walrus1
+animal:walrus22
+animal:walrus333
+animal:walrus4444
+animal:walrus6666
+animal:walrus666677
+place:cave
+place:cave 2
+place:cave  ww
+place:cave  wqrfq
+place:cave wqdqwerqw
+adjective:peculiar
+adjective:scary
+adjective:peaceful
