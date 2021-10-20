@@ -1,6 +1,6 @@
-Grading at 10/20/2021:03:45:56.900160
-For commit ID 70e3d4eb6184441151a2be5e48369663518a2165
-Grading at Tue Oct 19 23:45:54 EDT 2021
+Grading at 10/20/2021:03:50:32.676161
+For commit ID 1689e35422e6c164201803661c68b2777c5ab132
+Grading at Tue Oct 19 23:50:30 EDT 2021
 Running your test cases
 
 Compiling story-step3
@@ -11,7 +11,9 @@ gcc -o story-step3 story-step3.o rand_story.o provided.o
 rm story-step3.o
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt a0.txt
-Your program successfully indicated a failure case
+Once upon a time, there was a www. This www lived in a very
+scary cave. One day, it left its scary cave and met a walrus.
+Your program did not indicate a failure case
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story.txt
 Your file matched the expected output
@@ -19,7 +21,7 @@ Your file matched the expected output
 Test case story-step3 words.txt story2.txt
 Your file matched the expected output
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
