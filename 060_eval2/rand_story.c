@@ -147,6 +147,10 @@ char * parseStory(char * line,
     word = tracker->words[tracker->n_words - trackIdx];
     word_ = strdup(word);
   }
+  else if ((strtol(myWord, &endPtr, 10)) < 1 &&
+           ((unsigned long)(endPtr - myWord) == strlen(myWord)) && tracker != NULL) {
+    printError("Cannot have Int < 1.");
+  }
   else {  // else replace the words in story
     word = chooseWord(myWord, catArr);
     assert(word != NULL);
