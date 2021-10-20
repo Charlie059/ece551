@@ -1,4 +1,9 @@
 #error
+story-step1 n1.tx
+story-step1
+story-step1 n1.txt n2
+story-step1 n1.txt n2.txt -o
+
 story-step1 n1.txt
 story-step1 n2.txt
 story-step1 n3.txt
@@ -8,6 +13,7 @@ story-step1 n6.txt
 story-step1 n7.txt
 story-step1 n8.txt
 story-step1 n9.txt
+
 #success
 story-step1 s1.txt
 story-step1 s2.txt
