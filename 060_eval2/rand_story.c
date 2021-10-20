@@ -238,12 +238,11 @@ void readWords(char * line, size_t len, catarray_t * currentCatArr) {
   assert(colon != NULL);  // if no colon found, abort
   size_t nameLen = colon - line;
   assert(nameLen < strlen(line));
-  char * name = strndup(line, nameLen);  // name is category
-  // char * nextLinePtr = strchr(colon + 1, '\n');  // find nextline
-  // assert(nextLinePtr != NULL);                   // if no \n, abort
+  char * name = strndup(line, nameLen);          // name is category
+  char * nextLinePtr = strchr(colon + 1, '\n');  // find nextline
+  assert(nextLinePtr != NULL);                   // if no \n, abort
 
-  size_t wordLen = strlen(colon) - 1;
-  assert(wordLen != 0);
+  size_t wordLen = nextLinePtr - colon - 1;
   char * word = strndup(colon + 1, wordLen);  // word is replacement word
 
   // Given category find the idx in catarr
