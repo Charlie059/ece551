@@ -1,4 +1,5 @@
 #error
+story-step2 nw8.txt
 story-step1 n1.txt
 story-step2 nw3.txt
 story-step4 -n words2.txt story4.txt
