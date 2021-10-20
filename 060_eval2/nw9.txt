@@ -1,0 +1,14 @@
+a:aaaa
+b:asdasd
+a:cccc
+a:aaaa
+b:ssss
+c:ffff
+dd:wwww
+ff:qqqqq
+d:wwwww
+d'' :wwdw
+d'' :aaaa
+a:ppp
+a:
+a
