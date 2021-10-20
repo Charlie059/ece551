@@ -237,7 +237,7 @@ void readWords(char * line, size_t len, catarray_t * currentCatArr) {
   char * colon = strchr(line, ':');
   assert(colon != NULL);  // if no colon found, abort
   size_t nameLen = colon - line;
-  assert(nameLen < len);
+  assert(nameLen < strlen(line));
   char * name = strndup(line, nameLen);          // name is category
   char * nextLinePtr = strchr(colon + 1, '\n');  // find nextline
   assert(nextLinePtr != NULL);                   // if no \n, abort
@@ -331,8 +331,6 @@ void rmCatArr(char * myWord, const char * word, catarray_t * currentCatArr) {
       }
     }
   }
-
-  //BUG
 
   /*  remove the word from that category */
   free(currentCatArr->arr[cateIdx].words[wordsIdx]);
