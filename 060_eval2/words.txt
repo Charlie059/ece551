@@ -5,4 +5,4 @@ adjective:peculiar
 adjective:scary
 adjective:peaceful
 2a:cave
--1a:dwd
+-1:dwd
