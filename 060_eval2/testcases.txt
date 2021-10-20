@@ -26,14 +26,11 @@ story-step1 n7.txt
 story-step1 n8.txt
 story-step1 n9.txt
 
-story-step2 nw1.txt
+
 story-step2 nw2.txt
 story-step2 nw3.txt
-story-step2 nw4.txt
-story-step2 nw5.txt
 story-step2 nw6.txt
 story-step2 nw7.txt
-story-step2 nw8.txt
 story-step2 nw9.txt
 
 #success
@@ -59,6 +56,10 @@ story-step2 w6.txt
 story-step2 w7.txt
 story-step2 w8.txt
 story-step2 w9.txt
+story-step2 nw1.txt
+story-step2 nw4.txt
+story-step2 nw5.txt
+story-step2 nw8.txt
 
 story-step2 words.txt
 story-step3 words.txt story.txt
