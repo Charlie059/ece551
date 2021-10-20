@@ -1,6 +1,6 @@
-Grading at 10/20/2021:18:24:40.958187
-For commit ID 859fd23d31204e7141f904ed332eb1ee8b8c453c
-Grading at Wed Oct 20 14:24:16 EDT 2021
+Grading at 10/20/2021:19:15:41.555686
+For commit ID e141a920d9eb46fdce970644cdc4d1408ae5aae2
+Grading at Wed Oct 20 15:15:17 EDT 2021
 Running your test cases
 
 Compiling story-step2
@@ -11,7 +11,7 @@ gcc -o story-step2 story-step2.o rand_story.o provided.o
 rm story-step2.o
 +-----------------------------------------------------------------------+
 Test case 1 (error): story-step2 nw8.txt
-Your program successfully indicated a failure case
+Our story-step2 does not consider this an error case
 
 Compiling story-step1
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
@@ -186,7 +186,7 @@ Your file matched the expected output
 Test case 33 (success): story-step4 words.txt story2.txt
 Your file matched the expected output
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
