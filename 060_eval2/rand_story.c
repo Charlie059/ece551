@@ -143,7 +143,7 @@ char * parseStory(char * line,
   if ((strtol(myWord, &endPtr, 10)) >= 1 &&
       ((unsigned long)(endPtr - myWord) == strlen(myWord)) && tracker != NULL) {
     int trackIdx = strtol(myWord, &endPtr, 10);
-    assert(tracker->n_words - trackIdx >= 0);
+    assert((int)tracker->n_words - trackIdx >= 0);
     word = tracker->words[tracker->n_words - trackIdx];
     word_ = strdup(word);
   }
