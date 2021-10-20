@@ -1,6 +1,6 @@
 #error
+story-step3 words.txt a0.txt
 
 #success
 story-step3 words.txt story.txt
 story-step3 words.txt story2.txt
-story-step3 words.txt a0.txt
