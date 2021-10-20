@@ -7,6 +7,7 @@ story-step3 words.txt a0.txt
 story-step4 words.txt a0.txt
 story-step4 -n words.txt a0.txt
 #success
+story-step3 words4.txt story5.txt
 story-step4 -n words4.txt story5.txt
 story-step4  words4.txt story5.txt
 story-step1 story.txt
