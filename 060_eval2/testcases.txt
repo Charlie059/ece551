@@ -3,6 +3,18 @@ story-step1 n1.tx
 story-step1
 story-step1 n1.txt n2
 story-step1 n1.txt n2.txt -o
+story-step2 n1.tx
+story-step2
+story-step2 n1.txt n2
+story-step2 n1.txt n2.txt -o
+story-step3 n1.tx
+story-step3
+story-step3 n1.txt n2
+story-step3 n1.txt n2.txt -o
+story-step4 n1.tx
+story-step4
+story-step4 n1.txt n2
+story-step4 n1.txt n2.txt -o
 
 story-step1 n1.txt
 story-step1 n2.txt

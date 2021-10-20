@@ -14,7 +14,7 @@ int main(int argc, char ** argv) {
   FILE * f_story = fopen(argv[2], "r");
   if (f_word == NULL || f_story == NULL) {
     printError("Cannot open the file");
-    EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   category_t * tracker = malloc(sizeof(*tracker));

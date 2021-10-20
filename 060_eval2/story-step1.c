@@ -11,7 +11,7 @@ int main(int argc, char ** argv) {
   FILE * f = fopen(argv[1], "r");
   if (f == NULL) {
     perror("Cannot open this file");
-    EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
   readStoryFile(f, NULL, NULL, 0);
 
