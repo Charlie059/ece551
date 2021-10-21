@@ -23,6 +23,14 @@ IntArray::IntArray(const IntArray & rhs) :
 IntArray::~IntArray() {
   delete[] data;
 }
+IntArray IntArray::operator+(const IntArray & rhs) {
+  assert(this->numElements == rhs.numElements);
+  IntArray ans(numElements);
+  for (int i = 0; i < numElements; i++) {
+    ans[i] = this->data[i] + rhs.data[i];
+  }
+  return ans;
+}
 
 IntArray & IntArray::operator=(const IntArray & rhs) {
   if (this != &rhs) {
