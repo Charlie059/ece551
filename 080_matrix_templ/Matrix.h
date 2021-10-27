@@ -89,23 +89,20 @@ template<typename T>
 Matrix<T> Matrix<T>::operator+(const Matrix & rhs) const {
   assert((numRows == rhs.numRows) && (numColumns == rhs.numColumns));
   Matrix<T> ans(numRows, numColumns);
-  typename std::vector<std::vector<T> >::const_iterator this_it = rows.begin();
-  typename std::vector<std::vector<T> >::const_iterator rhs_it = rhs.rows.begin();
-  typename std::vector<std::vector<T> >::iterator ans_it = ans.rows.begin();
-  while (ans_it != ans.rows.end()) {
-    typename std::vector<T>::iterator ans_it_it = (*ans_it).begin();
-    typename std::vector<T>::const_iterator this_it_it = (*this_it).begin();
-    typename std::vector<T>::const_iterator rhs_it_it = (*rhs_it).begin();
-    while (ans_it_it != (*ans_it).end()) {
-      *ans_it_it = *this_it_it + *rhs_it_it;
-      ++ans_it_it;
-      ++this_it_it;
-      ++rhs_it_it;
+  ans.numColumns = numColumns;
+  ans.numRows = numRows;
+  typename std::vector<std::vector<T> > rows;
+
+  for (int i = 0; i < numRows; i++) {
+    std::vector<T> row;
+    for (int j = 0; j < numColumns; j++) {
+      T temp = rhs[i][j] + this->rows[i][j];
+      row.push_back(temp);
     }
-    ++ans_it;
-    ++rhs_it;
-    ++this_it;
+    rows.push_back(row);
   }
+  ans.rows = rows;
+
   return ans;
 }
 
