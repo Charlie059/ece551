@@ -1,36 +1,27 @@
-Grading at 10/27/2021:06:06:49.532796
-For commit ID 1c9c2745c48f4d58ba0101fd2eda722e6a311c0a
-Grading at Wed Oct 27 02:06:45 EDT 2021
+Grading at 10/27/2021:06:09:46.885119
+For commit ID a9e7f0cdde23d62ce959d944f9dfcb2d64ad9212
+Grading at Wed Oct 27 02:09:39 EDT 2021
 -----------------------------------------------
 testcase 1 : Testing with Matrix<int>
 ...compiling...
-In file included from test.cpp:1:0:
-Matrix.h: In instantiation of ‘std::vector<T>& Matrix<T>::operator[](int) const [with T = int]’:
-test.cpp:73:60:   required from here
-Matrix.h:71:20: error: binding reference of type ‘std::vector<int, std::allocator<int> >&’ to ‘const std::vector<int, std::allocator<int> >’ discards qualifiers
-   return rows[index];
-                    ^
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 2 : Testing with Matrix<std::string>
 ...compiling...
-In file included from test.cpp:1:0:
-Matrix.h: In instantiation of ‘std::vector<T>& Matrix<T>::operator[](int) const [with T = std::__cxx11::basic_string<char>]’:
-test.cpp:73:60:   required from here
-Matrix.h:71:20: error: binding reference of type ‘std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >&’ to ‘const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >’ discards qualifiers
-   return rows[index];
-                    ^
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 3 : Testing with Matrix<(a custom class we wrote)>
 ...compiling...
-In file included from test.cpp:1:0:
-Matrix.h: In instantiation of ‘std::vector<T>& Matrix<T>::operator[](int) const [with T = Tester]’:
-test.cpp:73:60:   required from here
-Matrix.h:71:20: error: binding reference of type ‘std::vector<Tester, std::allocator<Tester> >&’ to ‘const std::vector<Tester, std::allocator<Tester> >’ discards qualifiers
-   return rows[index];
-                    ^
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 --------------------------------------------
 Preparing to test assert fails...
 Compiling assertion failure tester...
@@ -56,4 +47,4 @@ testcase 7 :  operator+: different number of columns
 Your file matched the expected output
 Testcase passed
 
-Overall Grade: F
+Overall Grade: A
