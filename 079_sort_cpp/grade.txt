@@ -1,6 +1,6 @@
-Grading at 10/27/2021:04:07:04.039465
-For commit ID 773ecfde50141df846cf37488240e715a50e5b73
-Grading at Wed Oct 27 00:07:03 EDT 2021
+Grading at 10/27/2021:04:08:24.469069
+For commit ID e65040faaabc02a6a38c7730902b72370d0001a4
+Grading at Wed Oct 27 00:08:24 EDT 2021
 Looking for malloc in your files
 No uses found (good).
 Looking for free in your files
@@ -14,6 +14,8 @@ No uses found (good).
 Looking for printf in your files
 No uses found (good).
 Attempting to compile with make
+g++ -o sortLines -std=gnu++98 -pedantic -Wall -Werror sortLines.cpp
+Makefile:2: recipe for target 'sortLines' failed
 The code did not compile!
 
 Overall Grade: F
