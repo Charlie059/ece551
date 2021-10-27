@@ -6,7 +6,7 @@
 #include <vector>
 void readStdin(std::istream & istream);
 void print(std::vector<std::string>);
-
+void readFiles(int argc, char ** argv);
 int main(int argc, char ** argv) {
   if (argc == 1) {
     readStdin(std::cin);
