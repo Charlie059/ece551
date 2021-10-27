@@ -18,9 +18,9 @@ int main(int argc, char ** argv) {
 }
 
 void readFiles(int argc, char ** argv) {
-  for (int i = 0; i < argc; i++) {
-    std::ifstream readFile;
-    readFile.open(argv[i], std::ios::in);
+  for (int i = 1; i < argc; i++) {
+    std::ifstream readFile(argv[i]);
+
     if (!readFile.is_open()) {
       std::cerr << "file open fails" << std::endl;
       exit(EXIT_FAILURE);
@@ -41,10 +41,11 @@ void readStdin(std::istream & file) {
   }
   //sort the line
   std::sort(ans.begin(), ans.end());
+  print(ans);
 }
 
 void print(std::vector<std::string> ans) {
   for (size_t i = 0; i < ans.size(); i++) {
-    std::cout << ans[i];
+    std::cout << ans[i] << std::endl;
   }
 }
