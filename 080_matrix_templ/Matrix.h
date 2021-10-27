@@ -22,7 +22,7 @@ class Matrix {
   Matrix & operator=(const Matrix & rhs);
   int getRows() const;
   int getColumns() const;
-  std::vector<T> & operator[](int index) const;
+  const std::vector<T> & operator[](int index) const;
   std::vector<T> & operator[](int index);
   bool operator==(const Matrix & rhs) const;
   Matrix operator+(const Matrix & rhs) const;
@@ -66,7 +66,7 @@ int Matrix<T>::getColumns() const {
 }
 
 template<typename T>
-std::vector<T> & Matrix<T>::operator[](int index) const {
+const std::vector<T> & Matrix<T>::operator[](int index) const {
   assert((0 <= index) && (index < numRows));
   return rows[index];
 }
