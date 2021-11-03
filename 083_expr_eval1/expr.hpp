@@ -17,7 +17,7 @@ class NumExpression : public Expression {
 
  public:
   NumExpression(long setNum) : num(setNum){};
-  std::string toString() const {
+  virtual std::string toString() const {
     std::stringstream ss;
     ss << this->num;
     return ss.str();
@@ -33,9 +33,9 @@ class PlusExpression : public Expression {
 
  public:
   PlusExpression(Expression * lhs, Expression * rhs) : lhs(lhs), rhs(rhs){};
-  std::string toString() const {
+  virtual std::string toString() const {
     std::stringstream ss;
-    ss << this->lhs->toString() << "+" << this->rhs->toString();
+    ss << "(" << this->lhs->toString() << " + " << this->rhs->toString() << ")";
     return ss.str();
   };
   virtual ~PlusExpression() {
