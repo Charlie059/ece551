@@ -1,6 +1,6 @@
-Grading at 11/13/2021:21:25:59.918264
-For commit ID 40caf477283f5961f93c31cf1aa83c75d60ed2ed
-Grading at Sat Nov 13 16:25:50 EST 2021
+Grading at 11/13/2021:21:36:00.014444
+For commit ID a1d45e00b64328067e370d733b981163c0abc6c9
+Grading at Sat Nov 13 16:35:50 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -10,98 +10,51 @@ Compiled for step 1
 Test case 1 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page1.txt
 20a21
 > 
-23c24
-<  3. Choose the magic toaster.
-\ No newline at end of file
----
->  3. Choose the magic toaster.
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 2 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page2.txt
 20a21
 > 
-23c24
-<  3. Go alone.
-\ No newline at end of file
----
->  3. Go alone.
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 3 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page3.txt
 20a21
 > 
-23c24
-<  3. Go alone.
-\ No newline at end of file
----
->  3. Go alone.
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 4 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page4.txt
 24a25
 > 
-27c28
-<  3. Go alone.
-\ No newline at end of file
----
->  3. Go alone.
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 5 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page5.txt
 16a17
 > 
-19c20
-<  3. Bohemian Rhapsody, accompanied by the magestic call of a bald eagle
-\ No newline at end of file
----
->  3. Bohemian Rhapsody, accompanied by the magestic call of a bald eagle
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 6 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page1.txt
 11a12
 > 
-14c15
-<  3. Stab the dragon in the neck
-\ No newline at end of file
----
->  3. Stab the dragon in the neck
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 7 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page2.txt
 6a7
 > 
-8c9
-<  2. Pass the ruby to explore the rest of the hoard
-\ No newline at end of file
----
->  2. Pass the ruby to explore the rest of the hoard
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 8 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page3.txt
-3c3,4
-< Congratulations! You have won. Hooray!
-\ No newline at end of file
----
+2a3
 > 
-> Congratulations! You have won. Hooray!
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 9 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page4.txt
-3c3,4
-< Sorry, you have lost. Better luck next time!
-\ No newline at end of file
----
+2a3
 > 
-> Sorry, you have lost. Better luck next time!
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 10 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page5.txt
-6c6,7
-< Sorry, you have lost. Better luck next time!
-\ No newline at end of file
----
+5a6
 > 
-> Sorry, you have lost. Better luck next time!
 Your file did not match the expected output
 Step 1: Failed test cases as above
 
