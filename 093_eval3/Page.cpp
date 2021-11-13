@@ -165,7 +165,7 @@ void Page::printPage() {
   }
 
   else if (this->navSecPtr->getNavStatus() == LOSE) {
-    std::cout << "Sorry, you have lost. Better luck next time!" << std::end;
+    std::cout << "Sorry, you have lost. Better luck next time!" << std::endl;
     ;
   }
 }
