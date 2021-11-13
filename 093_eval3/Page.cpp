@@ -153,7 +153,8 @@ void Page::printPage() {
 
   // Print the choices if NavStatus is CHOICES
   if (this->navSecPtr->getNavStatus() == CHOICES) {
-    std::cout << std::endl << "What would you like to do?" << std::endl;
+    std::cout << "\nWhat would you like to do?" << std::endl;
+    std::cout << "\n";
 
     std::vector<std::pair<int, std::string> > choices = this->navSecPtr->getChoices();
     for (size_t i = 0; i < choices.size(); i++) {
