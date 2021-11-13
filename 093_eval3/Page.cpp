@@ -162,11 +162,14 @@ void Page::printPage() {
     }
   }
   else if (this->navSecPtr->getNavStatus() == WIN) {
+    std::cout << "\n";
     std::cout << "Congratulations! You have won. Hooray!" << std::endl;
+    std::cout << "\n";
   }
 
   else if (this->navSecPtr->getNavStatus() == LOSE) {
+    std::cout << "\n";
     std::cout << "Sorry, you have lost. Better luck next time!" << std::endl;
-    ;
+    std::cout << "\n";
   }
 }
