@@ -34,6 +34,5 @@ int main(int argc, char ** argv) {
   catch (InvaildInput & e) {
     std::cerr << e.what();
   }
-  //a.readPage(std::istream &)
   return EXIT_SUCCESS;
 }

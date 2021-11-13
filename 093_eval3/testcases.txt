@@ -1,0 +1,4 @@
+#error
+cyoa-step1 test.txt
+
+#success
