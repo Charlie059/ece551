@@ -157,17 +157,15 @@ void Page::printPage() {
 
     std::vector<std::pair<int, std::string> > choices = this->navSecPtr->getChoices();
     for (size_t i = 0; i < choices.size(); i++) {
-      if (i != choices.size() - 1)
-        std::cout << " " << i + 1 << ". " << choices[i].second << std::endl;
-      else
-        std::cout << " " << i + 1 << ". " << choices[i].second;
+      std::cout << " " << i + 1 << ". " << choices[i].second << std::endl;
     }
   }
   else if (this->navSecPtr->getNavStatus() == WIN) {
-    std::cout << "Congratulations! You have won. Hooray!";
+    std::cout << "Congratulations! You have won. Hooray!" << std::endl;
   }
 
   else if (this->navSecPtr->getNavStatus() == LOSE) {
-    std::cout << "Sorry, you have lost. Better luck next time!";
+    std::cout << "Sorry, you have lost. Better luck next time!" << std::end;
+    ;
   }
 }
