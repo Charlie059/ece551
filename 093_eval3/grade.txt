@@ -1,11 +1,10 @@
-Grading at 11/13/2021:22:20:32.834828
-For commit ID 107bfd7939b5130b4681f755d871d36da0822cf6
-Grading at Sat Nov 13 17:20:21 EST 2021
+Grading at 11/13/2021:22:24:44.006186
+For commit ID 7ea2dbbfe547148bbc5e45846a89d1778bb608ec
+Grading at Sat Nov 13 17:24:33 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
-g++ -Wall -Werror -pedantic -ggdb3 -std=gnu++98 -c cyoa-step1.cpp
-g++ -o cyoa-step1 cyoa-step1.o Page.o NavSection.o InvaildInput.o
+make: 'cyoa-step1' is up to date.
 Compiled for step 1
 +-----------------------------------------------------------------------+
 Test case 1 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page1.txt
@@ -56,10 +55,9 @@ Compiling cyoa-step1
 make: 'cyoa-step1' is up to date.
 +-----------------------------------------------------------------------+
 Test case 1 (error): cyoa-step1 test.txt
-You listed this in #errors, and we agree that it is an error case.
-However, your program did not indicate a failure case (exit status was EXIT_SUCCESS)
+Your program successfully indicated a failure case
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
