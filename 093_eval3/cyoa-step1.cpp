@@ -18,6 +18,7 @@
 #include "Page.hpp"
 
 int main(int argc, char ** argv) {
+  bool EXITFLAG = EXIT_SUCCESS;
   // Exit if not only one file
   if (argc != 2) {
     std::cerr << "Expected only one input file." << std::endl;
@@ -33,6 +34,7 @@ int main(int argc, char ** argv) {
   }
   catch (InvaildInput & e) {
     std::cerr << e.what();
+    EXITFLAG = EXIT_FAILURE;
   }
-  return EXIT_SUCCESS;
+  return EXITFLAG;
 }
