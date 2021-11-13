@@ -1,0 +1,19 @@
+/*******************************
+ * File Name: cyoa-step1.cpp
+ * Author: Xuhui Gong
+ * Date: 2021/11/11
+ *
+ * This file takes the name
+ * of one single page as an
+ * input, check the errors,
+ * if not error, print the
+ * page out in the format.
+ * If error occurs, print 
+ * the error and exit.
+ *******************************/
+
+#include <cstdlib>
+
+int main(int argc, char ** argv) {
+  return EXIT_SUCCESS;
+}

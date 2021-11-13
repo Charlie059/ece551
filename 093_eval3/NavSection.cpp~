@@ -1,0 +1,12 @@
+#include "NavSection.hpp"
+
+int NavSection::getNavStatus() const {
+  return this->navStatus;
+}
+
+std::vector<std::pair<int, std::string> > NavSection::getChoices() const {
+  return this->choices;
+}
+
+void NavSection::setStatus(int navStatus) {
+}

@@ -1,0 +1,5 @@
+cyoa-step1: cyoa-step1.cpp NavSection.hpp Page.hpp
+	g++ -o cyoa-step1 -std=gnu++98 -Wall -Werror -ggdb3 cyoa-step1.cpp
+
+clean:
+	rm -f *~ cyoa-step1
