@@ -105,7 +105,7 @@ bool Story::readStory(char ** argv) {
   // Open the page1
   Page page1;
   page1.readPage(genFileName(argv[1], 1).c_str());
-  std::cout << genFileName(argv[1], 1) << std::endl;
+  //std::cout << genFileName(argv[1], 1) << std::endl;
   if (isExist(genFileName(argv[1], 1)) == false)
     throw InvaildInput("Cannot find page0.\n");
   stories.push_back(page1);  // push the page1 to the vec
@@ -116,7 +116,7 @@ bool Story::readStory(char ** argv) {
     Page otherPage;
     otherPage.readPage(genFileName(argv[1], i).c_str());
     stories.push_back(otherPage);
-    std::cout << genFileName(argv[1], i) << std::endl;
+    //std::cout << genFileName(argv[1], i) << std::endl;
     i++;
   }
   return true;
