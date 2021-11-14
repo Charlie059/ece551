@@ -23,7 +23,10 @@ int main(int argc, char ** argv) {
     if (story.readStory(argv) == false) {
       throw InvaildInput("Cannot read file.\n");
     }
-    //page.printPage();
+    // Vaildate the stroy
+    story.checkStory();
+    // Play the Story
+    story.play();
   }
   catch (InvaildInput & e) {
     std::cerr << e.what();

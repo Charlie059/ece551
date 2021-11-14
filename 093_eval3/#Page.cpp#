@@ -175,3 +175,5 @@ void Page::printPage() {
 NavSection Page::getNavSec() const {
   return this->navSec;
 }
+
+ 

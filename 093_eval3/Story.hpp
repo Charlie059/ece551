@@ -11,5 +11,10 @@ class Story {
   Story() : stories(){};
   ~Story(){};
   bool readStory(char ** argv);
+  void checkStory();
+  void vaildRefChoice();
+  void vaildRefByPage();
+  void vaildWinLose();
+  void play();
 };
 #endif
