@@ -1,21 +1,14 @@
 /*******************************
- * File Name: cyoa-step1.cpp
+ * File Name: cyoa-step2.cpp
  * Author: Xuhui Gong
- * Date: 2021/11/11
- *
- * This file takes the name
- * of one single page as an
- * input, check the errors,
- * if not error, print the
- * page out in the format.
- * If error occurs, print 
- * the error and exit.
+ * Date: 2021/11/13
  *******************************/
 #include <cstdlib>
 
 #include "InvaildInput.hpp"
 #include "NavSection.hpp"
 #include "Page.hpp"
+#include "Story.hpp"
 
 int main(int argc, char ** argv) {
   bool EXITFLAG = EXIT_SUCCESS;
@@ -26,12 +19,11 @@ int main(int argc, char ** argv) {
   }
 
   try {
-    Page page;
-    std::string fileName = argv[1];
-    if (page.readPage(fileName) == false) {
+    Story story;
+    if (story.readStory(argv) == false) {
       throw InvaildInput("Cannot read file.\n");
     }
-    page.printPage();
+    //page.printPage();
   }
   catch (InvaildInput & e) {
     std::cerr << e.what();

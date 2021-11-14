@@ -1,5 +1,5 @@
 /*******************************
- * File Name: cyoa-step1.cpp
+ * File Name: cyoa-step2.cpp
  * Author: Xuhui Gong
  * Date: 2021/11/11
  *
@@ -27,11 +27,10 @@ int main(int argc, char ** argv) {
 
   try {
     Page page;
-    std::string fileName = argv[1];
-    if (page.readPage(fileName) == false) {
+    if (page.readPage(argv) == false) {
       throw InvaildInput("Cannot read file.\n");
     }
-    page.printPage();
+    //page.printPage();
   }
   catch (InvaildInput & e) {
     std::cerr << e.what();

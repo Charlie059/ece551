@@ -89,8 +89,8 @@ int checkNavSec(const std::vector<std::string> & str_buffer, size_t sharpIdx) {
   return navStatus;
 }
 
-bool Page::readPage(char ** argv) {
-  std::ifstream file(argv[1]);
+bool Page::readPage(std::string fileName) {
+  std::ifstream file(fileName.c_str());
   size_t sharpIdx = 0;
   int navStatus = UNKNOWN;
   //File read and open based on
