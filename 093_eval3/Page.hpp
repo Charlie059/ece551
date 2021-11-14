@@ -6,12 +6,12 @@
 #include "NavSection.hpp"
 class Page {
  private:
-  NavSection * navSecPtr;
+  NavSection navSec;
   std::string text;
 
  public:
-  Page() : navSecPtr(new NavSection()), text(""){};
-  ~Page() { delete navSecPtr; };
+  Page() : navSec(), text(""){};
+  ~Page(){};
   bool readPage(std::string);
   void readNavSec(int, std::vector<std::string>, size_t);
   void readTextSec(const std::vector<std::string> & str_buffer, size_t sharpIdx);

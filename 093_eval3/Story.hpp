@@ -5,10 +5,10 @@
 #include "Page.hpp"
 class Story {
  private:
-  std::vector<Page> story;
+  std::vector<Page> stories;
 
  public:
-  Story() : story(){};
+  Story() : stories(){};
   ~Story(){};
   bool readStory(char ** argv);
 };

@@ -120,16 +120,16 @@ void Page::readNavSec(int navStatus,
                       size_t sharpIdx) {
   switch (navStatus) {
     case WIN:
-      this->navSecPtr->setStatus(WIN);
+      this->navSec.setStatus(WIN);
       break;
     case LOSE:
-      this->navSecPtr->setStatus(LOSE);
+      this->navSec.setStatus(LOSE);
       break;
     default:
-      this->navSecPtr->setStatus(CHOICES);
+      this->navSec.setStatus(CHOICES);
       for (size_t i = 0; i < sharpIdx; i++) {
         std::pair<int, std::string> choice = checkChoice(str_buffer[i]);
-        this->navSecPtr->addChoice(choice);
+        this->navSec.addChoice(choice);
       }
   }
 }
@@ -152,21 +152,21 @@ void Page::printPage() {
   std::cout << this->text << std::endl;
 
   // Print the choices if NavStatus is CHOICES
-  if (this->navSecPtr->getNavStatus() == CHOICES) {
+  if (this->navSec.getNavStatus() == CHOICES) {
     std::cout << "\nWhat would you like to do?" << std::endl;
     std::cout << "\n";
 
-    std::vector<std::pair<int, std::string> > choices = this->navSecPtr->getChoices();
+    std::vector<std::pair<int, std::string> > choices = this->navSec.getChoices();
     for (size_t i = 0; i < choices.size(); i++) {
       std::cout << " " << i + 1 << ". " << choices[i].second << std::endl;
     }
   }
-  else if (this->navSecPtr->getNavStatus() == WIN) {
+  else if (this->navSec.getNavStatus() == WIN) {
     std::cout << "\n";
     std::cout << "Congratulations! You have won. Hooray!" << std::endl;
   }
 
-  else if (this->navSecPtr->getNavStatus() == LOSE) {
+  else if (this->navSec.getNavStatus() == LOSE) {
     std::cout << "\n";
     std::cout << "Sorry, you have lost. Better luck next time!" << std::endl;
   }
