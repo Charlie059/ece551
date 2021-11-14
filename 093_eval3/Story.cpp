@@ -165,7 +165,7 @@ void Story::play() {
     }
 
     int dirPage = currentPage.getNavSec().getChoices()[userSelection - 1].first;
-    std::cout << dirPage << std::endl;
+    //std::cout << dirPage << std::endl;
     currentPage = this->stories[dirPage - 1];
     currentPage.printPage();
   }
