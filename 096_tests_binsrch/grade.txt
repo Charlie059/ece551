@@ -1,9 +1,25 @@
-Grading at 11/15/2021:21:42:12.753395
-For commit ID 25cd6f2378b6a09201d81eb4fdd3fb20b229b116
-Grading at Mon Nov 15 16:42:12 EST 2021
+Grading at 11/15/2021:21:43:32.081866
+For commit ID 3814562f7b4cd5ab93030671438f8757345089da
+Grading at Mon Nov 15 16:43:31 EST 2021
 **Testing broken implementation 1 **
 -------------------------------------
 
-Could not compile test-bsearch.cpp with /usr/local/ece551/bin_search/bsearch1.o
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+Your test program did not identify /usr/local/ece551/bin_search/bsearch5.o as broken!
 
 Overall Grade: FAILED
