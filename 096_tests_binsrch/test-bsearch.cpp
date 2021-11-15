@@ -49,10 +49,10 @@ class sthFunction : public Function<int, int> {
 
 int main() {
   sthFunction * sth = new sthFunction();
-  check(sth, -2, 4, 0, "ok");
-  check(sth, -6, -1, -2, "all negative\n");
-  check(sth, 2, 10, 2, "all positive\n");
-  check(sth, 0, 4, 0, "inclusive zero\n");
+  check(sth, -1, 4, 0, "ok");
+  check(sth, -4, -1, -2, "all negative\n");
+  check(sth, 1, 4, 1, "all positive\n");
+  check(sth, 0, 3, 0, "inclusive zero\n");
   check(sth, -4, 0, -1, "exclusive zero\n");
   return EXIT_SUCCESS;
 }
