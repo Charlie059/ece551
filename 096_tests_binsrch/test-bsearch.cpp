@@ -1,13 +1,11 @@
 #include <assert.h>
-1;
-95;
-0c
+
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
 
 #include "function.h"
-    class CountedIntFn : public Function<int, int> {
+class CountedIntFn : public Function<int, int> {
  protected:
   unsigned remaining;
   Function<int, int> * f;
