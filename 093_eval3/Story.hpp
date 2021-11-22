@@ -16,5 +16,7 @@ class Story {
   void vaildRefByPage();
   void vaildWinLose();
   void play();
+  void getDepth();
+  void printDepth();
 };
 #endif

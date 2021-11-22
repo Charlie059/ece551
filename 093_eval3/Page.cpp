@@ -175,3 +175,19 @@ void Page::printPage() {
 NavSection Page::getNavSec() const {
   return this->navSec;
 }
+
+int Page::getDepth() const {
+  return this->depth;
+}
+
+void Page::setDepth(int depth) {
+  this->depth = depth;
+}
+
+Page * Page::getPrev() const {
+  return this->prev;
+}
+
+void Page::setPrev(Page * prev) {
+  this->prev = prev;
+}

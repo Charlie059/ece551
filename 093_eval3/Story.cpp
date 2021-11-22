@@ -1,10 +1,12 @@
 #include "Story.hpp"
 
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 #include <fstream>
 #include <iostream>
+#include <queue>
 #include <set>
 #include <sstream>
 
@@ -168,5 +170,47 @@ void Story::play() {
     //std::cout << dirPage << std::endl;
     currentPage = this->stories[dirPage - 1];
     currentPage.printPage();
+  }
+}
+
+// Get each pages depth: Apply BFS
+void Story::getDepth() {
+  // Def the queue
+  std::queue<Page *> queue;
+
+  // Set page1 as depth 0
+  this->stories[0].setDepth(0);
+
+  // Push page1 into the queue
+  queue.push(&this->stories[0]);
+
+  while (!queue.empty()) {
+    // Pop and set to the current
+    Page * currentPage = queue.front();
+    queue.pop();
+
+    // Get current page choice
+    std::vector<std::pair<int, std::string> > choice =
+        currentPage->getNavSec().getChoices();
+
+    // For the current page's neigbor
+    for (size_t i = 0; i < choice.size(); i++) {
+      // Check if the neigbor is not visited. ie. the depth is inf
+      if (this->stories[choice[i].first - 1].getDepth() ==
+          std::numeric_limits<int>::max()) {
+        // Set the Depth to the currentPage's depth + 1
+        this->stories[choice[i].first - 1].setDepth(currentPage->getDepth() + 1);
+        // Push into the queue
+        queue.push(&this->stories[choice[i].first - 1]);
+
+        // Set the prev's page to the current
+        this->stories[choice[i].first - 1].setPrev(currentPage);
+      }
+    }
+  }
+}
+void Story::printDepth() {
+  for (size_t i = 0; i < this->stories.size(); i++) {
+    std::cout << "Page " << i + 1 << ":" << this->stories[i].getDepth() << std::endl;
   }
 }
