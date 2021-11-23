@@ -211,6 +211,11 @@ void Story::getDepth() {
 }
 void Story::printDepth() {
   for (size_t i = 0; i < this->stories.size(); i++) {
-    std::cout << "Page " << i + 1 << ":" << this->stories[i].getDepth() << std::endl;
+    if (this->stories[i].getDepth() == std::numeric_limits<int>::max()) {
+      std::cout << "Page " << i + 1 << " is not reachable" << std::endl;
+    }
+    else {
+      std::cout << "Page " << i + 1 << ":" << this->stories[i].getDepth() << std::endl;
+    }
   }
 }
