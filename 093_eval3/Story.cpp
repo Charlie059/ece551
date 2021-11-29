@@ -89,8 +89,11 @@ void Story::vaildWinLose() {
     }
   }
 
-  throw InvaildInput("At least one page must be a WIN page and at least one page must be "
-                     "a LOSE page.\n");
+  if (findWin && findLose == false) {
+    throw InvaildInput(
+        "At least one page must be a WIN page and at least one page must be "
+        "a LOSE page.\n");
+  }
 }
 
 // Check if file exist

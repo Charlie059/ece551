@@ -2,3 +2,4 @@
 cyoa-step1 test.txt
 
 #success
+cyoa-step4 story3
