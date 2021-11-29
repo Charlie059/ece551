@@ -304,14 +304,14 @@ void Story::DFSHelper(int src,
 
     // Else pop DFS_Stack
     else {
-      while (visited_Stack.back().size() == 0) {
-        visited_Stack.pop_back();
-        DFS_Stack.pop_back();
-      }
+      // while (visited_Stack.back().size() == 0) {
+      visited_Stack.pop_back();
+      DFS_Stack.pop_back();
+      // }
     }
 
     // If we reach to the dest
-    if (DFS_Stack.back() == dest) {
+    if (DFS_Stack.size() != 0 && DFS_Stack.back() == dest) {
       std::vector<int> ans_temp;
       for (size_t i = 0; i < DFS_Stack.size(); ++i) {
         ans_temp.push_back(DFS_Stack[i] + 1);
