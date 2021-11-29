@@ -1,11 +1,13 @@
 CFLAGS = -Wall -Werror -pedantic -ggdb3 -std=gnu++98
-all: cyoa-step1 cyoa-step2 cyoa-step3
+all: cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4
 cyoa-step1:cyoa-step1.o Page.o NavSection.o InvaildInput.o
 	g++ -o cyoa-step1 cyoa-step1.o Page.o NavSection.o InvaildInput.o
 cyoa-step2:cyoa-step2.o Story.o Page.o NavSection.o InvaildInput.o
 	g++ -o cyoa-step2 cyoa-step2.o Story.o Page.o NavSection.o InvaildInput.o
 cyoa-step3:cyoa-step3.o Story.o Page.o NavSection.o InvaildInput.o
 	g++ -o cyoa-step3 cyoa-step3.o Story.o Page.o NavSection.o InvaildInput.o
+cyoa-step4:cyoa-step4.o Story.o Page.o NavSection.o InvaildInput.o
+	g++ -o cyoa-step4 cyoa-step4.o Story.o Page.o NavSection.o InvaildInput.o
 Story.o:Story.cpp Story.hpp Page.hpp
 	g++ $(CFLAGS) -c Story.cpp
 Page.o:Page.cpp Page.hpp NavSection.hpp 
@@ -20,3 +22,5 @@ cyoa-step2.o:cyoa-step2.cpp Story.hpp Page.hpp NavSection.hpp InvaildInput.hpp
 	g++ $(CFLAGS) -c cyoa-step2.cpp
 cyoa-step3.o:cyoa-step3.cpp Story.hpp Page.hpp NavSection.hpp InvaildInput.hpp
 	g++ $(CFLAGS) -c cyoa-step3.cpp
+cyoa-step4.o:cyoa-step4.cpp Story.hpp Page.hpp NavSection.hpp InvaildInput.hpp
+	g++ $(CFLAGS) -c cyoa-step4.cpp

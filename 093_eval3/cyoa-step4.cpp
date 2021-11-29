@@ -1,7 +1,7 @@
 /*******************************
- * File Name: cyoa-step3.cpp
+ * File Name: cyoa-step4.cpp
  * Author: Xuhui Gong
- * Date: 2021/11/20
+ * Date: 2021/11/28
  *******************************/
 #include <cstdlib>
 
@@ -26,7 +26,7 @@ int main(int argc, char ** argv) {
     // Vaildate the stroy
     story.checkStory();
     story.getDepth();
-    story.printDepth();
+    story.findWinPath();
   }
   catch (InvaildInput & e) {
     std::cerr << e.what();

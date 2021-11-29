@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <queue>
@@ -218,4 +219,183 @@ void Story::printDepth() {
       std::cout << "Page " << i + 1 << ":" << this->stories[i].getDepth() << std::endl;
     }
   }
+}
+
+void diagnosisDFS(std::vector<int> & DFS_Stack,
+                  std::vector<std::vector<int> > & visited_Stack) {
+  std::cout << "Init DFS_Stack: " << std::endl;
+  for (size_t i = 0; i < DFS_Stack.size(); ++i) {
+    std::cout << DFS_Stack[i] + 1 << std::endl;
+  }
+
+  std::cout << "Init visited_Stack: " << std::endl;
+  for (size_t i = 0; i < visited_Stack.size(); ++i) {
+    std::cout << "[";
+    for (size_t j = 0; j < visited_Stack[i].size(); ++j) {
+      std::cout << visited_Stack[i][j] + 1 << ",";
+    }
+    std::cout << "]" << std::endl;
+  }
+  std::cout << "***************" << std::endl;
+}
+
+// FIND all WIN ending pages
+std::vector<int> Story::findWinPagesNum() {
+  std::vector<int> ans;
+  for (size_t i = 0; i < this->stories.size(); ++i) {
+    if (this->stories[i].getNavSec().getNavStatus() == WIN) {
+      ans.push_back(i + 1);
+    }
+  }
+  return ans;
+}
+
+void visitNeighbor(std::vector<int> & DFS_Stack,
+                   std::vector<std::vector<int> > & visited_Stack,
+                   std::vector<Page> stories) {
+  // get the top of DFS_Stack
+  int currentPageIdx = DFS_Stack.back();
+  // Get current page choice
+  std::vector<std::pair<int, std::string> > choice =
+      stories[currentPageIdx].getNavSec().getChoices();
+  std::vector<int> visitedTemp;
+
+  // Check the neigh of DFS_Stack's Top and add to the visited_Stack
+  for (size_t i = 0; i < choice.size(); i++) {
+    if (std::find(DFS_Stack.begin(), DFS_Stack.end(), choice[i].first - 1) ==
+        DFS_Stack.end()) {
+      // if not find. ie. not repeated value
+      visitedTemp.push_back(choice[i].first - 1);
+    }
+  }
+  visited_Stack.push_back(visitedTemp);
+}
+// Helper function of DFS
+void Story::DFSHelper(int src,
+                      int dest,
+                      std::vector<int> & DFS_Stack,
+                      std::vector<std::vector<int> > & visited_Stack,
+                      std::vector<std::vector<int> > & ans,
+                      bool diagnosis) {
+  // Push the src into the DFS_Stack
+  DFS_Stack.push_back(src);
+
+  // Visit the current node's Neighbor
+  visitNeighbor(DFS_Stack, visited_Stack, stories);
+
+  // diagnosis
+  if (diagnosis == true) {
+    diagnosisDFS(DFS_Stack, visited_Stack);
+  }
+
+  // While the DFS_Stack is not empty
+  while (DFS_Stack.size() != 0) {
+    // If the visited_Stack's back is not empty. ie. not leaf node
+
+    if (visited_Stack.back().size() != 0) {
+      // Pop visited_Stack and move to the DFS_Stack
+      int moveToDFS_Stack = visited_Stack.back().back();
+      visited_Stack.back().pop_back();
+      DFS_Stack.push_back(moveToDFS_Stack);
+
+      // Visit current node's Neighbor
+      visitNeighbor(DFS_Stack, visited_Stack, stories);
+    }
+
+    // Else pop DFS_Stack
+    else {
+      while (visited_Stack.back().size() == 0) {
+        visited_Stack.pop_back();
+        DFS_Stack.pop_back();
+      }
+    }
+
+    // If we reach to the dest
+    if (DFS_Stack.back() == dest) {
+      std::vector<int> ans_temp;
+      for (size_t i = 0; i < DFS_Stack.size(); ++i) {
+        ans_temp.push_back(DFS_Stack[i] + 1);
+      }
+      ans.push_back(ans_temp);
+    }
+
+    // diagnosis
+    if (diagnosis == true) {
+      diagnosisDFS(DFS_Stack, visited_Stack);
+    }
+  }
+}
+
+// Check page selection which helps to win the game
+std::string checkSelection(int currPageNum, int nextPageNum, std::vector<Page> stories) {
+  // if nextPageNum not exist, return WIN
+  if (nextPageNum == -1) {
+    return "win";
+  }
+
+  // Get index
+  int currPageIdx = currPageNum - 1;
+  // int nextPageIdx = nextPageNum - 1;
+  // Get current page choice
+  std::vector<std::pair<int, std::string> > choice =
+      stories[currPageIdx].getNavSec().getChoices();
+
+  // Find the match choice
+  for (size_t i = 0; i < choice.size(); ++i) {
+    if (choice[i].first == nextPageNum) {
+      return intToStr(i + 1);
+    }
+  }
+  return "ERROR: NOT FOUND";
+}
+// Function of print win path
+void printWinPath(std::vector<std::vector<int> > ans, std::vector<Page> stories) {
+  for (size_t i = 0; i < ans.size(); i++) {
+    for (size_t j = 0; j < ans[i].size(); j++) {
+      // Check selection
+      int currPageNum = ans[i][j];
+      int nextPageNum;
+      if (j + 1 < ans[i].size()) {
+        nextPageNum = ans[i][j + 1];
+      }
+      else {
+        nextPageNum = -1;
+      }
+
+      std::string choicenumber = checkSelection(currPageNum, nextPageNum, stories);
+      std::cout << ans[i][j] << "(" << choicenumber << ")";
+      if (j != ans[i].size() - 1) {
+        std::cout << ",";
+      }
+    }
+    std::cout << "\n";
+  }
+}
+// This function is used for the STEP 4:
+// which is implmented by the DFS. We
+// use two stack here: one of the stack
+// is same as DFS Stack implmentation,
+// another Stack is used to store the
+// info about which node should be visted
+// next.
+void Story::findWinPath() {
+  std::vector<int> DFS_Stack;
+  std::vector<std::vector<int> > visited_Stack;
+  std::vector<int> winPageNum;
+  std::vector<std::vector<int> > ans;
+
+  // find WIN ending pages
+  winPageNum = findWinPagesNum();
+  // for each WIN page
+  for (size_t i = 0; i < winPageNum.size(); ++i) {
+    DFSHelper(0, winPageNum[i] - 1, DFS_Stack, visited_Stack, ans, false);
+  }
+
+  // If unwinnable
+  if (ans.size() == 0) {
+    std::cout << "This story is unwinnable!" << std::endl;
+    return;
+  }
+  // Print ans
+  printWinPath(ans, stories);
 }
