@@ -250,10 +250,18 @@ void visitNeighbor(std::vector<int> & DFS_Stack, std::vector<Page> & stories) {
   std::vector<std::pair<int, std::string> > choice =
       stories[currentPageIdx].getNavSec().getChoices();
 
-  // Check the neigh of DFS_Stack's Top and add to the Node's neigbor
+  // Track the prev to the currPath
+  int currIdx = currentPageIdx;
+  std::vector<int> currPath;
+  while (currIdx != -1) {
+    currPath.push_back(currIdx);
+    currIdx = stories[currIdx].getPrevIdx();
+  }
+
+  // Check if the path not in a loop and add to the Node's neigbor
   for (size_t i = 0; i < choice.size(); i++) {
-    if (std::find(DFS_Stack.begin(), DFS_Stack.end(), choice[i].first - 1) ==
-        DFS_Stack.end()) {
+    if (std::find(currPath.begin(), currPath.end(), choice[i].first - 1) ==
+        currPath.end()) {
       // if not find. ie. not repeated value
       stories[currentPageIdx].pushNeigbor(choice[i].first - 1);
     }
