@@ -191,3 +191,32 @@ Page * Page::getPrev() const {
 void Page::setPrev(Page * prev) {
   this->prev = prev;
 }
+
+int Page::popNeigbor() {
+  if (!this->neigbor.empty()) {
+    int ans = this->neigbor.top();
+    this->neigbor.pop();
+    return ans;
+  }
+  return -1;
+}
+
+void Page::pushNeigbor(int toPush) {
+  this->neigbor.push(toPush);
+}
+
+bool Page::emptyNeigbor() {
+  return neigbor.empty();
+}
+
+std::stack<int> Page::getNeigbor() {
+  return this->neigbor;
+}
+
+void Page::setPrevIdx(int idx) {
+  this->prevIdx = idx;
+}
+
+int Page::getPrevIdx() {
+  return this->prevIdx;
+}

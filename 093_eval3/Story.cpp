@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 #include <algorithm>
+#include <deque>
 #include <fstream>
 #include <iostream>
 #include <queue>
@@ -224,22 +225,11 @@ void Story::printDepth() {
   }
 }
 
-void diagnosisDFS(std::vector<int> & DFS_Stack,
-                  std::vector<std::vector<int> > & visited_Stack) {
-  std::cout << "Init DFS_Stack: " << std::endl;
+void diagnosisDFS(std::vector<int> & DFS_Stack) {
+  std::cout << "DFS_Stack: " << std::endl;
   for (size_t i = 0; i < DFS_Stack.size(); ++i) {
     std::cout << DFS_Stack[i] + 1 << std::endl;
   }
-
-  std::cout << "Init visited_Stack: " << std::endl;
-  for (size_t i = 0; i < visited_Stack.size(); ++i) {
-    std::cout << "[";
-    for (size_t j = 0; j < visited_Stack[i].size(); ++j) {
-      std::cout << visited_Stack[i][j] + 1 << ",";
-    }
-    std::cout << "]" << std::endl;
-  }
-  std::cout << "***************" << std::endl;
 }
 
 // FIND all WIN ending pages
@@ -253,78 +243,78 @@ std::vector<int> Story::findWinPagesNum() {
   return ans;
 }
 
-void visitNeighbor(std::vector<int> & DFS_Stack,
-                   std::vector<std::vector<int> > & visited_Stack,
-                   std::vector<Page> stories) {
+void visitNeighbor(std::vector<int> & DFS_Stack, std::vector<Page> & stories) {
   // get the top of DFS_Stack
   int currentPageIdx = DFS_Stack.back();
   // Get current page choice
   std::vector<std::pair<int, std::string> > choice =
       stories[currentPageIdx].getNavSec().getChoices();
-  std::vector<int> visitedTemp;
 
-  // Check the neigh of DFS_Stack's Top and add to the visited_Stack
+  // Check the neigh of DFS_Stack's Top and add to the Node's neigbor
   for (size_t i = 0; i < choice.size(); i++) {
     if (std::find(DFS_Stack.begin(), DFS_Stack.end(), choice[i].first - 1) ==
         DFS_Stack.end()) {
       // if not find. ie. not repeated value
-      visitedTemp.push_back(choice[i].first - 1);
+      stories[currentPageIdx].pushNeigbor(choice[i].first - 1);
     }
   }
-  visited_Stack.push_back(visitedTemp);
 }
+
 // Helper function of DFS
 void Story::DFSHelper(int src,
                       int dest,
                       std::vector<int> & DFS_Stack,
-                      std::vector<std::vector<int> > & visited_Stack,
                       std::vector<std::vector<int> > & ans,
                       bool diagnosis) {
   // Push the src into the DFS_Stack
   DFS_Stack.push_back(src);
 
   // Visit the current node's Neighbor
-  visitNeighbor(DFS_Stack, visited_Stack, stories);
+  visitNeighbor(DFS_Stack, stories);
 
   // diagnosis
   if (diagnosis == true) {
-    diagnosisDFS(DFS_Stack, visited_Stack);
+    diagnosisDFS(DFS_Stack);
   }
 
   // While the DFS_Stack is not empty
   while (DFS_Stack.size() != 0) {
-    // If the visited_Stack's back is not empty. ie. not leaf node
+    // Get the current top of DFS_Stack
+    int curr = DFS_Stack.back();
 
-    if (visited_Stack.back().size() != 0) {
-      // Pop visited_Stack and move to the DFS_Stack
-      int moveToDFS_Stack = visited_Stack.back().back();
-      visited_Stack.back().pop_back();
-      DFS_Stack.push_back(moveToDFS_Stack);
+    // If the current Node have neigbor to access
+    if (!stories[curr].emptyNeigbor()) {
+      // get one neigbor dir and move to the DFS_Stack
+      int to_push = stories[curr].popNeigbor();
+      DFS_Stack.push_back(to_push);
+
+      // Mark Prev
+      stories[to_push].setPrevIdx(curr);
 
       // Visit current node's Neighbor
-      visitNeighbor(DFS_Stack, visited_Stack, stories);
+      visitNeighbor(DFS_Stack, stories);
     }
-
-    // Else pop DFS_Stack
-    else {
-      // while (visited_Stack.back().size() == 0) {
-      visited_Stack.pop_back();
-      DFS_Stack.pop_back();
-      // }
-    }
-
-    // If we reach to the dest
-    if (DFS_Stack.size() != 0 && DFS_Stack.back() == dest) {
-      std::vector<int> ans_temp;
-      for (size_t i = 0; i < DFS_Stack.size(); ++i) {
-        ans_temp.push_back(DFS_Stack[i] + 1);
+    else {  // Else we have go through all the path of this node
+      // If we reach to the dest
+      if (DFS_Stack.size() != 0 && DFS_Stack.back() == dest) {
+        // Track the prev to the ans
+        int currIdx = dest;
+        std::vector<int> ans_temp;
+        while (currIdx != -1) {
+          ans_temp.push_back(currIdx + 1);
+          currIdx = stories[currIdx].getPrevIdx();
+        }
+        // Reverse the ans
+        std::reverse(ans_temp.begin(), ans_temp.end());
+        ans.push_back(ans_temp);
       }
-      ans.push_back(ans_temp);
+      // Pop DFS_Stack
+      DFS_Stack.pop_back();
     }
 
     // diagnosis
     if (diagnosis == true) {
-      diagnosisDFS(DFS_Stack, visited_Stack);
+      diagnosisDFS(DFS_Stack);
     }
   }
 }
@@ -375,15 +365,13 @@ void printWinPath(std::vector<std::vector<int> > ans, std::vector<Page> stories)
   }
 }
 // This function is used for the STEP 4:
-// which is implmented by the DFS. We
-// use two stack here: one of the stack
-// is same as DFS Stack implmentation,
-// another Stack is used to store the
-// info about which node should be visted
-// next.
+// which is implmented by the stack based DFS.
+// The basic idea from AoP and we add a stack
+// to each Node so that we can simluate how
+// the DFS going on (which path has searched and
+// which not)
 void Story::findWinPath() {
-  std::vector<int> DFS_Stack;
-  std::vector<std::vector<int> > visited_Stack;
+  std::vector<int> DFSStack;
   std::vector<int> winPageNum;
   std::vector<std::vector<int> > ans;
 
@@ -391,7 +379,7 @@ void Story::findWinPath() {
   winPageNum = findWinPagesNum();
   // for each WIN page
   for (size_t i = 0; i < winPageNum.size(); ++i) {
-    DFSHelper(0, winPageNum[i] - 1, DFS_Stack, visited_Stack, ans, false);
+    DFSHelper(0, winPageNum[i] - 1, DFSStack, ans, false);
   }
 
   // If unwinnable

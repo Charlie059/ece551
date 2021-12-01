@@ -22,8 +22,7 @@ class Story {
   std::vector<int> findWinPagesNum();
   void DFSHelper(int src,
                  int dest,
-                 std::vector<int> & DFS_Stack,
-                 std::vector<std::vector<int> > & visited_Stack,
+                 std::vector<int> & stack,
                  std::vector<std::vector<int> > & ans,
                  bool diagnosis);
 };
