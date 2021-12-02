@@ -1,0 +1,22 @@
+# This file contains error cases
+
+# Test dir name
+1. story1 (no page1) # ERROR
+2. story2 (page2, 3 ,4) # ERROR
++----------+      +-----------+    +------------+
+|          |      |           |    |            |
+|    p2    +----->|     p3    +---->     p4     |
+|          |      |           |    |            |
++----------+      +-----------+    +------------+
+
+┌──────────┐      ┌───────────┐    ┌────────────┐
+│          │      │           │    │            │
+│    p1    ├─────►│     p2    ├────►     p5     │
+│          │      │           │    │            │
+└──────────┘      └───────────┘    └────────────┘
+3. story3 (page1, 2 , 5) # CORRECT
+4. story4 (page1, 2, 3(ERRor)) # ERROR Page 3 ERROR
+
+# 4a
+5. story5 (page1, 2, 3) # ERROR page3 point no exist
+6. story6 (page1 ,2 ,3) 
