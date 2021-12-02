@@ -1,10 +1,9 @@
-Grading at 12/02/2021:20:27:33.992419
-For commit ID d317f928054b0784470bad4c79dfb6bc356f03b7
-Grading at Thu Dec  2 15:26:49 EST 2021
+Grading at 12/02/2021:21:22:41.497697
+For commit ID 9026a2f307fdda5525ada68d51945c6e34873c69
+Grading at Thu Dec  2 16:21:58 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
-g++ -Wall -Werror -pedantic -ggdb3 -std=gnu++98 -c Page.cpp
 g++ -o cyoa-step1 cyoa-step1.o Page.o NavSection.o InvaildInput.o
 Compiled for step 1
 +-----------------------------------------------------------------------+
@@ -100,32 +99,16 @@ Compiling cyoa-step1
 make: 'cyoa-step1' is up to date.
 +-----------------------------------------------------------------------+
 Test case 1 (error): cyoa-step1 test/step1/pagel.txt
-
-
-What would you like to do?
-
- 1. 
-You listed this in #errors, and we agree that it is an error case.
-However, your program did not indicate a failure case (exit status was EXIT_SUCCESS)
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 2 (error): cyoa-step1 test/step1/page0.txt
-Test Start from 0 (Should start from page1) 
-
-Congratulations! You have won. Hooray!
-You listed this in #errors, and we agree that it is an error case.
-However, your program did not indicate a failure case (exit status was EXIT_SUCCESS)
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 3 (error): cyoa-step1 
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 4 (error): cyoa-step1 test/step1/page0
-
-
-What would you like to do?
-
- 1. 1
-You listed this in #errors, and we agree that it is an error case.
-However, your program did not indicate a failure case (exit status was EXIT_SUCCESS)
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 5 (error): cyoa-step1 test/step1/page0.txt test/step1/page1.txt
 Your program successfully indicated a failure case
@@ -187,7 +170,7 @@ Your program successfully indicated a failure case
 Test case 24 (success): cyoa-step1 test/step1/page18.txt
 Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
