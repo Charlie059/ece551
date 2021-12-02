@@ -1,0 +1,4 @@
+WIN
+LOSE
+#
+WIN and LOSE

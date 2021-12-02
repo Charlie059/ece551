@@ -1,0 +1,4 @@
+WIN
+1:choice 1
+#
+ERROR: WIN + Choice  

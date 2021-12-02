@@ -1,0 +1,12 @@
+#This file descirbe the test cases
+
+# Read File
+1. page0.txt # ERROR: Test Start from 0 (Should start from page1)
+2. 	     # ERROR: No parm
+3. page0     # ERROR: No .txt
+4. page0.txt page1.txt # ERROR: Mutil Parm
+5. noExist.txt # ERROR: Not EXIST
+
+# Page ERROR
+6. page1.txt # ERROR: wIN
+7. page2.txt # ERROR: WINN

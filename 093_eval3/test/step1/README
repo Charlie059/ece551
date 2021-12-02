@@ -1,0 +1,28 @@
+#This file descirbe the test cases
+
+# Read File
+1. page0.txt # ERROR: Test Start from 0 (Should start from page1)
+2. 	     # ERROR: No parm
+3. page0     # ERROR: No .txt
+4. page0.txt page1.txt # ERROR: Mutil Parm
+5. noExist.txt # ERROR: Not EXIST
+
+# Page ERROR
+6. page1.txt # ERROR: wIN
+7. page2.txt # ERROR: WINN
+8. page3.txt # ERROR: WIN + \n + \n
+9. page4.txt # ERROR: WIN \n LOSE
+10. page5.txt # ERROR: NO WIN or LOSE or Choice (without \n)
+11. page6.txt # ERROR: NO WIN or LOSE or Choice (with \n)
+12. page7.txt # ERROR: WIN + Choice
+13. page8.txt # ERROR: Choice + WIN
+
+# Choice Format
+14. page9.txt # ERROR: PageNum == 0
+15. page10.txt # ERROR: PageNum == -1
+16. page11.txt # ERROR: PageNum == 12a
+17. page12.txt # ERROR: PageNum == a12
+18. page13.txt # ERROR: PageNum == 1 and a12
+19. page14.txt # ERROR: PageNum ==
+20. page15.txt # ERROR: No :
+21. page16.txt # ERROR: # not start

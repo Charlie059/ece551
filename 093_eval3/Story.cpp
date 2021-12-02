@@ -112,7 +112,6 @@ bool Story::readStory(char ** argv) {
   // Open the page1
   Page page1;
   page1.readPage(genFileName(argv[1], 1).c_str());
-  //std::cout << genFileName(argv[1], 1) << std::endl;
   if (isExist(genFileName(argv[1], 1)) == false)
     throw InvaildInput("Cannot find page0.\n");
   stories.push_back(page1);  // push the page1 to the vec
@@ -172,7 +171,6 @@ void Story::play() {
     }
 
     int dirPage = currentPage.getNavSec().getChoices()[userSelection - 1].first;
-    //std::cout << dirPage << std::endl;
     currentPage = this->stories[dirPage - 1];
     currentPage.printPage();
   }
@@ -262,7 +260,6 @@ void visitNeighbor(std::vector<int> & DFS_Stack, std::vector<Page> & stories) {
   for (size_t i = 0; i < choice.size(); i++) {
     if (std::find(currPath.begin(), currPath.end(), choice[i].first - 1) ==
         currPath.end()) {
-      // if not find. ie. not repeated value
       stories[currentPageIdx].pushNeigbor(choice[i].first - 1);
     }
   }
@@ -290,7 +287,7 @@ void Story::DFSHelper(int src,
     // Get the current top of DFS_Stack
     int curr = DFS_Stack.back();
 
-    // If the current Node have neigbor to access
+    // If the current Node have neigbor to visit
     if (!stories[curr].emptyNeigbor()) {
       // get one neigbor dir and move to the DFS_Stack
       int to_push = stories[curr].popNeigbor();
@@ -316,7 +313,7 @@ void Story::DFSHelper(int src,
         std::reverse(ans_temp.begin(), ans_temp.end());
         ans.push_back(ans_temp);
       }
-      // Pop DFS_Stack
+      // Pop DFS_Stack becasue we have no path to go
       DFS_Stack.pop_back();
     }
 
@@ -336,7 +333,6 @@ std::string checkSelection(int currPageNum, int nextPageNum, std::vector<Page> s
 
   // Get index
   int currPageIdx = currPageNum - 1;
-  // int nextPageIdx = nextPageNum - 1;
   // Get current page choice
   std::vector<std::pair<int, std::string> > choice =
       stories[currPageIdx].getNavSec().getChoices();
@@ -376,8 +372,8 @@ void printWinPath(std::vector<std::vector<int> > ans, std::vector<Page> stories)
 // which is implmented by the stack based DFS.
 // The basic idea from AoP and we add a stack
 // to each Node so that we can simluate how
-// the DFS going on (which path has searched and
-// which not)
+// the DFS going on (which path has been visited
+// and which not)
 void Story::findWinPath() {
   std::vector<int> DFSStack;
   std::vector<int> winPageNum;
