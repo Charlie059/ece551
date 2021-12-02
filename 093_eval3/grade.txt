@@ -1,6 +1,6 @@
-Grading at 12/02/2021:23:14:34.917784
-For commit ID 5e791a78b4a82bb189a9adfbdf8df2a34a7d46e7
-Grading at Thu Dec  2 18:13:44 EST 2021
+Grading at 12/02/2021:23:19:00.192966
+For commit ID 205380c2bd7dabd84f87c8e3cd27b572d36e9582
+Grading at Thu Dec  2 18:18:07 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -200,132 +200,16 @@ Your file matched the expected output
 Compiling cyoa-step2
 make: 'cyoa-step2' is up to date.
 +-----------------------------------------------------------------------+
-Test case 32 (success): cyoa-step2 test/step2/story9 < test/step2/input9.txt
-We considered this an error case and gave the following message:
-I expected to find a file called 'theirs32.txt' but it did not exist
-(or was not a regular file)
-Here are the files that I can find:
-cyoa-step1
-cyoa-step1.cpp
-cyoa-step1.cpp~
-cyoa-step1.o
-cyoa-step1.stderr
-cyoa-step1.stdout
-cyoa-step2
-cyoa-step2.cpp
-cyoa-step2.cpp~
-cyoa-step2.o
-cyoa-step2.stderr
-cyoa-step2.stdout
-cyoa-step3
-cyoa-step3.cpp
-cyoa-step3.cpp~
-cyoa-step3.o
-cyoa-step4
-cyoa-step4.cpp
-cyoa-step4.cpp~
-cyoa-step4.o
-err10.txt
-err11.txt
-err12.txt
-err13.txt
-err14.txt
-err15.txt
-err16.txt
-err17.txt
-err18.txt
-err1.txt
-err2.txt
-err31.txt
-err3.txt
-err4.txt
-err5.txt
-err6.txt
-err7.txt
-err8.txt
-err9.txt
-err.log
-err.txt
-Extra-Credit.txt
-grade.txt
-InvaildInput.cpp
-#InvaildInput.h#
-InvaildInput.h~
-InvaildInput.hpp
-InvaildInput.hpp~
-InvaildInput.o
-Makefile
-Makefile~
-myec.txt
-NavSection.cpp
-NavSection.cpp~
-NavSection.hpp
-NavSection.hpp~
-NavSection.o
-ours10.txt
-ours11.txt
-ours12.txt
-ours13.txt
-ours14.txt
-ours15.txt
-ours16.txt
-ours17.txt
-ours18.txt
-ours1.txt
-ours2.txt
-ours31.txt
-ours3.txt
-ours4.txt
-ours5.txt
-ours6.txt
-ours7.txt
-ours8.txt
-ours9.txt
-ours_sort17.txt
-ours_sort18.txt
-page1.txt
-Page.cpp
-Page.cpp~
-Page.hpp
-Page.hpp~
-Page.o
-pregrader_input.txt
-README
-story1
-story2
-story3
-Story.cpp
-Story.cpp~
-Story.hpp
-Story.hpp~
-Story.o
-test
-test2a.txt
-testcases.txt
-test.txt
-test.txt~
-theirs10.txt
-theirs11.txt
-theirs12.txt
-theirs13.txt
-theirs14.txt
-theirs15.txt
-theirs16.txt
-theirs17.txt
-theirs18.txt
-theirs1.txt
-theirs2.txt
-theirs31.txt
-theirs3.txt
-theirs4.txt
-theirs5.txt
-theirs6.txt
-theirs7.txt
-theirs8.txt
-theirs9.txt
-theirs_sort17.txt
-theirs_sort18.txt
-vg.log
+Test case 32 (success): cyoa-step2 test/step2/story9 < test/step2/story9/input9.txt
+2d1
+< 
+10d8
+< 
+16d13
+< 
+21d17
+< 
+Your file did not match the expected output
 
 You have FAILED one or more of your test cases
 Keep debugging
