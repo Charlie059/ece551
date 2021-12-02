@@ -26,3 +26,5 @@
 19. page14.txt # ERROR: PageNum ==
 20. page15.txt # ERROR: No :
 21. page16.txt # ERROR: # not start
+22. page17.txt # ERROR: no #
+23. page18.txt # CORRECT: #xxxxx

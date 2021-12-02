@@ -73,18 +73,20 @@ int checkNavSec(const std::vector<std::string> & str_buffer, size_t sharpIdx) {
   else if (sharpIdx == 1) {  // If nav section only one line and is WIN or LOSE
     if (str_buffer[0] == "WIN") {
       navStatus = WIN;
+      return navStatus;
     }
     else if (str_buffer[0] == "LOSE") {
       navStatus = LOSE;
+      return navStatus;
     }
   }
-  else {
-    for (size_t i = 0; i < sharpIdx; i++) {
-      std::string temp = str_buffer[i];
-      checkChoice(temp);
-    }
-    navStatus = CHOICES;
+
+  // Choice
+  for (size_t i = 0; i < sharpIdx; i++) {
+    std::string temp = str_buffer[i];
+    checkChoice(temp);
   }
+  navStatus = CHOICES;
 
   return navStatus;
 }
