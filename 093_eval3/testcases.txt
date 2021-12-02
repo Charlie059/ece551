@@ -1,4 +1,5 @@
 #error
+cyoa-step1 test/step1/pagel.txt
 cyoa-step1 test/step1/page0.txt
 cyoa-step1
 cyoa-step1 test/step1/page0
