@@ -91,7 +91,47 @@ int checkNavSec(const std::vector<std::string> & str_buffer, size_t sharpIdx) {
   return navStatus;
 }
 
+// Vaild file name "page%"
+void vaildFileName(std::string fileName) {
+  // Find the last /: based on https://www.cplusplus.com/reference/string/string/find_last_of/
+  std::size_t found = fileName.find_last_of("/");
+
+  std::string name;
+  std::string num;
+  std::string extend;
+
+  // if found not return string::npos
+  if (found != std::string::npos) {
+    fileName = fileName.substr(found + 1);
+  }
+  name = fileName.substr(0, 4);
+  num = fileName.substr(4, fileName.size() - 8);
+  extend = fileName.substr(fileName.size() - 4, 4);
+
+  // Check Page
+  if (name != "page") {
+    throw InvaildInput("Excepted to match page.\n");
+  }
+
+  // Check num
+  int numInt = strToInt(num);
+  if (numInt < 1) {
+    throw InvaildInput("Excepted to match page%d which %d >= 1, but %d < 1.\n");
+  }
+
+  // Check extend
+  if (extend != ".txt") {
+    throw InvaildInput("Excepted to match .txt File");
+  }
+
+  // Check All
+  if (name + intToStr(numInt) + extend != fileName) {
+    throw InvaildInput("Excepted to match page%d which %d >= 1.\n");
+  }
+}
+
 bool Page::readPage(std::string fileName) {
+  vaildFileName(fileName);
   std::ifstream file(fileName.c_str());
   size_t sharpIdx = 0;
   int navStatus = UNKNOWN;
