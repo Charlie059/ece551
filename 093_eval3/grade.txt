@@ -1,9 +1,10 @@
-Grading at 12/02/2021:17:45:28.407150
-For commit ID 03c1389b06f1f3eefe24620a107b40bea05916e5
-Grading at Thu Dec  2 12:44:46 EST 2021
+Grading at 12/02/2021:20:18:11.590478
+For commit ID 9646d9f3ac0daf5fc73907dbd4814b2ad6cad219
+Grading at Thu Dec  2 15:17:28 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
+g++ -Wall -Werror -pedantic -ggdb3 -std=gnu++98 -c Page.cpp
 g++ -o cyoa-step1 cyoa-step1.o Page.o NavSection.o InvaildInput.o
 Compiled for step 1
 +-----------------------------------------------------------------------+
@@ -39,7 +40,7 @@ Your file matched the expected output
 Step 1: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step2
-make: 'cyoa-step2' is up to date.
+g++ -o cyoa-step2 cyoa-step2.o Story.o Page.o NavSection.o InvaildInput.o
 Compiled for step 2
 Input to story is
 1
@@ -74,7 +75,7 @@ Your file matched the expected output
 Step 2: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step3
-make: 'cyoa-step3' is up to date.
+g++ -o cyoa-step3 cyoa-step3.o Story.o Page.o NavSection.o InvaildInput.o
 +-----------------------------------------------------------------------+
 Test case 15 (success): cyoa-step3 /usr/local/ece551/cyoa/story1
 Your file matched the expected output
@@ -109,7 +110,13 @@ Test case 2 (error): cyoa-step1
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 3 (error): cyoa-step1 test/step1/page0
-Your program successfully indicated a failure case
+
+
+What would you like to do?
+
+ 1. 1
+You listed this in #errors, and we agree that it is an error case.
+However, your program did not indicate a failure case (exit status was EXIT_SUCCESS)
 +-----------------------------------------------------------------------+
 Test case 4 (error): cyoa-step1 test/step1/page0.txt test/step1/page1.txt
 Your program successfully indicated a failure case
@@ -169,15 +176,7 @@ Test case 22 (error): cyoa-step1 test/step1/page17.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 23 (success): cyoa-step1 test/step1/page18.txt
-1c1,5
-< Navigation section cannot UNKNOWN.
----
-> someting
-> 
-> What would you like to do?
-> 
->  1. 1
-Your file did not match the expected output
+Your file matched the expected output
 
 You have FAILED one or more of your test cases
 Keep debugging
