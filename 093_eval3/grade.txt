@@ -1,6 +1,6 @@
-Grading at 12/03/2021:02:43:16.424431
-For commit ID 878a861b2baa1380a24bca453c7a08c81404fc88
-Grading at Thu Dec  2 21:42:24 EST 2021
+Grading at 12/03/2021:02:51:24.491276
+For commit ID a27c624608b8a32f0ca69453aec17266d2cef8bf
+Grading at Thu Dec  2 21:50:31 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -203,9 +203,7 @@ make: 'cyoa-step2' is up to date.
 Test case 32 (success): cyoa-step2 test/step2/story9 < test/step2/story9/input9.txt
 10d9
 < 
-16d14
-< 
-21d18
+15d13
 < 
 Your file did not match the expected output
 
