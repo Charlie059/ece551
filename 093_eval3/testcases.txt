@@ -33,6 +33,7 @@ cyoa-step2 test/step2/story7
 #success
 cyoa-step1 test/step1/page18.txt
 cyoa-step2 test/step2/story9 < test/step2/story9/input9.txt
+cyoa-step2 test/step2/story11 < test/step2/story10/input10.txt
 cyoa-step2 test/step2/story10 < test/step2/story10/input10.txt
 cyoa-step3 test/step3/story1
 cyoa-step3 test/step3/story2
