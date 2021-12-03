@@ -58,7 +58,7 @@ void Story::vaildRefByPage() {
     //   pointedPages.insert(choices[j].first);
     // }
     for (size_t j = 0; j < choices.size(); j++) {
-      if (choices[j].first != (int)i) {
+      if (choices[j].first != (int)i + 1) {
         ref[choices[j].first] = true;
       }
     }
