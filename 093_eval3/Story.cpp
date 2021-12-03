@@ -59,7 +59,7 @@ void Story::vaildRefByPage() {
     // }
     for (size_t j = 0; j < choices.size(); j++) {
       if (choices[j].first != (int)i + 1) {
-        ref[choices[j].first] = true;
+        ref[choices[j].first - 1] = true;
       }
     }
   }
