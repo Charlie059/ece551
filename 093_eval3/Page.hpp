@@ -1,3 +1,4 @@
+//Please refer to the .CPP file for function descriptions
 #ifndef __PAGE_HPP__
 #define __PAGE_HPP__
 #include <iostream>
@@ -7,6 +8,7 @@
 
 #include "NavSection.hpp"
 
+// Declear the int to Str and Str to int functions
 std::string intToStr(int toStr);
 int strToInt(std::string toInt);
 
@@ -14,10 +16,13 @@ class Page {
  private:
   NavSection navSec;
   std::string text;
+  // Used to calculate the depth in STEP 2
   int depth;
+  // Def the Prev used by BFS and DFS
   Page * prev;
   int prevIdx;
-  std::stack<int> neigbor;
+  std::stack<int>
+      neigbor;  // Def the neigbor stack, when we use DFS, we may pop one of neigbor when we finish that path
 
  public:
   Page() :
@@ -39,11 +44,11 @@ class Page {
   Page * getPrev() const;
   void setPrev(Page *);
   void setPrevIdx(int idx);
-  int getPrevIdx();
+  int getPrevIdx() const;
   int popNeigbor();
   void pushNeigbor(int toPush);
   bool emptyNeigbor();
-  std::stack<int> getNeigbor();
+  std::stack<int> getNeigbor() const;
 };
 
 #endif

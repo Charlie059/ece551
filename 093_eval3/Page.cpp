@@ -255,7 +255,7 @@ bool Page::emptyNeigbor() {
   return neigbor.empty();
 }
 
-std::stack<int> Page::getNeigbor() {
+std::stack<int> Page::getNeigbor() const {
   return this->neigbor;
 }
 
@@ -263,6 +263,6 @@ void Page::setPrevIdx(int idx) {
   this->prevIdx = idx;
 }
 
-int Page::getPrevIdx() {
+int Page::getPrevIdx() const {
   return this->prevIdx;
 }

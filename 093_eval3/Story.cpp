@@ -1,3 +1,19 @@
+// +---------------------------------------+
+// |Story.cpp                              |
+// |Xuhui gong                             |
+// |2021/12/3                              |
+// |This file includes all functions       |
+// |used by the story, including check     |
+// |story, check user input, BFS, DFS      |
+// |and other implementations.             |
+// |                                       |
+// |                                       |
+// |                                       |
+// |                                       |
+// |                                       |
+// |                                       |
+// +---------------------------------------+
+
 #include "Story.hpp"
 
 #include <math.h>

@@ -1,3 +1,4 @@
+// Please refer to the .CPP file for function descriptions
 #ifndef __STORY_HPP__
 #define __STORY_HPP__
 #include <vector>
