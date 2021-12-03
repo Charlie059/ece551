@@ -191,7 +191,9 @@ void Page::readTextSec(const std::vector<std::string> & str_buffer, size_t sharp
 
 void Page::printPage() {
   // Print the text of page
-  std::cout << this->text << std::endl;
+  if (!this->text.empty()) {
+    std::cout << this->text << std::endl;
+  }
 
   // Print the choices if NavStatus is CHOICES
   if (this->navSec.getNavStatus() == CHOICES) {
