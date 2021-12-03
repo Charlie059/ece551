@@ -1,6 +1,6 @@
-Grading at 12/02/2021:23:56:31.949669
-For commit ID 9aaaae6df83a68c238674347ee6e780193e26e9b
-Grading at Thu Dec  2 18:55:39 EST 2021
+Grading at 12/03/2021:02:26:43.265822
+For commit ID 91f0079a0b35ab5244ffe2dde29877cdc79439f2
+Grading at Thu Dec  2 21:25:50 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -74,7 +74,7 @@ Your file matched the expected output
 Step 2: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step3
-make: 'cyoa-step3' is up to date.
+g++ -o cyoa-step3 cyoa-step3.o Story.o Page.o NavSection.o InvaildInput.o
 +-----------------------------------------------------------------------+
 Test case 15 (success): cyoa-step3 /usr/local/ece551/cyoa/story1
 Your file matched the expected output
@@ -201,13 +201,11 @@ Compiling cyoa-step2
 make: 'cyoa-step2' is up to date.
 +-----------------------------------------------------------------------+
 Test case 32 (success): cyoa-step2 test/step2/story9 < test/step2/story9/input9.txt
-2d1
+10d9
 < 
-10d8
+16d14
 < 
-16d13
-< 
-21d17
+21d18
 < 
 Your file did not match the expected output
 
