@@ -45,18 +45,12 @@ void Story::vaildRefChoice() {
 
 // Every page (except page 1) is referenced by at least one *other* page's choices.
 void Story::vaildRefByPage() {
-  //http://www.cplusplus.com/reference/set/set/insert/
-  std::set<int> pointedPages;
-
   std::vector<bool> ref(stories.size(), false);
 
   // Add the pointedPages
   for (size_t i = 0; i < stories.size(); i++) {
     std::vector<std::pair<int, std::string> > choices =
         stories[i].getNavSec().getChoices();
-    // for (size_t j = 0; j < choices.size(); j++) {
-    //   pointedPages.insert(choices[j].first);
-    // }
     for (size_t j = 0; j < choices.size(); j++) {
       if (choices[j].first != (int)i + 1) {
         ref[choices[j].first - 1] = true;
@@ -64,26 +58,15 @@ void Story::vaildRefByPage() {
     }
   }
   // insert page1
-  //pointedPages.insert(1);
   ref[0] = true;
 
-  // // Check if any page if not pointed by other except page1
+  // Check if any page if not pointed by other except page1
   for (size_t i = 0; i < stories.size(); i++) {
     if (ref[i] == false) {
       throw InvaildInput("Every page (except page 1) is referenced by at least one "
                          "*other* page's choices check failure.\n");
     }
   }
-  // for (size_t i = 0; i < stories.size(); i++) {
-  //   //http://www.cplusplus.com/reference/set/set/find/
-  //   std::set<int>::iterator it;
-  //   it = pointedPages.find(i + 1);
-  //   // If not find
-  //   if (it == pointedPages.end()) {
-  //     throw InvaildInput("Every page (except page 1) is referenced by at least one "
-  //                        "*other* page's choices check failure.\n");
-  //   }
-  // }
 }
 
 // At least one page must be a WIN page and at least one page must be a LOSE page.
