@@ -151,7 +151,7 @@ int getUserInput(Page currentPage) {
       return selectionInt;
     }
     else {
-      std::cout << "That is not a valid choice, please try again";
+      std::cout << "That is not a valid choice, please try again\n";
       std::cin.clear();
     }
   } while (accept == false);
