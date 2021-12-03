@@ -195,8 +195,9 @@ void Page::printPage() {
 
   // Print the choices if NavStatus is CHOICES
   if (this->navSec.getNavStatus() == CHOICES) {
-    std::cout << "\nWhat would you like to do?" << std::endl;
-    std::cout << "\n";
+    std::cout << std::endl;
+    std::cout << "What would you like to do?" << std::endl;
+    std::cout << std::endl;
 
     std::vector<std::pair<int, std::string> > choices = this->navSec.getChoices();
     for (size_t i = 0; i < choices.size(); i++) {
@@ -204,12 +205,12 @@ void Page::printPage() {
     }
   }
   else if (this->navSec.getNavStatus() == WIN) {
-    std::cout << "\n";
+    std::cout << std::endl;
     std::cout << "Congratulations! You have won. Hooray!" << std::endl;
   }
 
   else if (this->navSec.getNavStatus() == LOSE) {
-    std::cout << "\n";
+    std::cout << std::endl;
     std::cout << "Sorry, you have lost. Better luck next time!" << std::endl;
   }
 }
