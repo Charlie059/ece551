@@ -1,6 +1,6 @@
-Grading at 12/03/2021:03:42:46.891700
-For commit ID 589b41a030c759f6c35465ad2da216377ded3c15
-Grading at Thu Dec  2 22:41:53 EST 2021
+Grading at 12/03/2021:03:50:10.687594
+For commit ID 11c540b563e57eb42fe8442b9f79efaa96fb6a95
+Grading at Thu Dec  2 22:49:17 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -39,7 +39,8 @@ Your file matched the expected output
 Step 1: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step2
-make: 'cyoa-step2' is up to date.
+g++ -Wall -Werror -pedantic -ggdb3 -std=gnu++98 -c Story.cpp
+g++ -o cyoa-step2 cyoa-step2.o Story.o Page.o NavSection.o InvaildInput.o
 Compiled for step 2
 Input to story is
 1
@@ -74,7 +75,7 @@ Your file matched the expected output
 Step 2: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step3
-make: 'cyoa-step3' is up to date.
+g++ -o cyoa-step3 cyoa-step3.o Story.o Page.o NavSection.o InvaildInput.o
 +-----------------------------------------------------------------------+
 Test case 15 (success): cyoa-step3 /usr/local/ece551/cyoa/story1
 Your file matched the expected output
@@ -201,10 +202,10 @@ Compiling cyoa-step2
 make: 'cyoa-step2' is up to date.
 +-----------------------------------------------------------------------+
 Test case 32 (success): cyoa-step2 test/step2/story9 < test/step2/story9/input9.txt
-14,16d13
-< That is not a valid choice, please try again
-< That is not a valid choice, please try again
-< That is not a valid choice, please try again
+14c14
+< That is not a valid choice, please try againThat is not a valid choice, please try againThat is not a valid choice, please try again
+---
+> 
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 33 (success): cyoa-step2 test/step2/story10 < test/step2/story10/input10.txt
