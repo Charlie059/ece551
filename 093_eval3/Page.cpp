@@ -130,6 +130,7 @@ void vaildFileName(std::string fileName) {
   }
 }
 
+// Read each page
 bool Page::readPage(std::string fileName) {
   vaildFileName(fileName);
   std::ifstream file(fileName.c_str());

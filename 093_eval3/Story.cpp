@@ -105,6 +105,7 @@ bool isExist(std::string fileName) {
     return true;
 }
 
+// Read Stroy based on the path
 bool Story::readStory(char ** argv) {
   // Open the page1
   Page page1;
@@ -119,7 +120,6 @@ bool Story::readStory(char ** argv) {
     Page otherPage;
     otherPage.readPage(genFileName(argv[1], i).c_str());
     stories.push_back(otherPage);
-    //std::cout << genFileName(argv[1], i) << std::endl;
     i++;
   }
   return true;
@@ -209,6 +209,7 @@ void Story::getDepth() {
     }
   }
 }
+// Function to print the depth
 void Story::printDepth() {
   for (size_t i = 0; i < this->stories.size(); i++) {
     if (this->stories[i].getDepth() == std::numeric_limits<int>::max()) {
@@ -238,6 +239,7 @@ std::vector<int> Story::findWinPagesNum() {
   return ans;
 }
 
+// visit curr Node's neibor
 void visitNeighbor(std::vector<int> & DFS_Stack, std::vector<Page> & stories) {
   // get the top of DFS_Stack
   int currentPageIdx = DFS_Stack.back();
