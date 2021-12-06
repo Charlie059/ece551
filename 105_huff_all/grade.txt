@@ -1,0 +1,17 @@
+Grading at 12/06/2021:21:44:22.504314
+For commit ID 120af4a135c58293f42e8ff7d993c5bdc7e07449
+Grading at Mon Dec  6 16:44:21 EST 2021
+compiling
+g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++98 -c bitstring.cpp
+g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++98 -c buildTree.cpp
+g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++98 -c compress.cpp
+compress.cpp: In function ‘void writeCompressedOutput(const char*, const char*, const std::map<unsigned int, BitString>&)’:
+compress.cpp:41:25: error: variable ‘std::ifstream f’ has initializer but incomplete type
+   std::ifstream f(inFile);
+                         ^
+Makefile:8: recipe for target 'compress.o' failed
+make: *** [compress.o] Error 1
+make failed
+Make succeeded, but compress does not exist (did you change the targets?)
+
+Overall Grade: F
