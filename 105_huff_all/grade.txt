@@ -1,17 +1,26 @@
-Grading at 12/06/2021:21:44:22.504314
-For commit ID 120af4a135c58293f42e8ff7d993c5bdc7e07449
-Grading at Mon Dec  6 16:44:21 EST 2021
+Grading at 12/06/2021:21:45:53.925851
+For commit ID 4da62bd3b37e95db9df916c7c339a14b3b0eb55a
+Grading at Mon Dec  6 16:45:22 EST 2021
 compiling
-g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++98 -c bitstring.cpp
-g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++98 -c buildTree.cpp
-g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++98 -c compress.cpp
-compress.cpp: In function ‘void writeCompressedOutput(const char*, const char*, const std::map<unsigned int, BitString>&)’:
-compress.cpp:41:25: error: variable ‘std::ifstream f’ has initializer but incomplete type
-   std::ifstream f(inFile);
-                         ^
-Makefile:8: recipe for target 'compress.o' failed
-make: *** [compress.o] Error 1
-make failed
-Make succeeded, but compress does not exist (did you change the targets?)
+g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++98 -o compress  bitstring.o  buildTree.o  compress.o  node.o  readFreq.o
+Make succeed, compress created
+Testcase 1
+-----------------------
+  - Valgrind was clean (no errors, no memory leaks)
+Decompressing, and comparing to original...:
+Your file matched the expected output
+Testcase passed 
+Testcase 2
+-----------------------
+  - Valgrind was clean (no errors, no memory leaks)
+Decompressing, and comparing to original...:
+Your file matched the expected output
+Testcase passed 
+Testcase 3
+-----------------------
+  - Valgrind was clean (no errors, no memory leaks)
+Decompressing, and comparing to original...:
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: A
