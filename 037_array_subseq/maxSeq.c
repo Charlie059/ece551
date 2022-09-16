@@ -30,3 +30,25 @@ size_t maxSeq(int * array, size_t n) {
   }
   return max_sub_seq;
 }
+
+
+// class Solution {
+// public:
+//     int findLengthOfLCIS(vector<int>& nums) {
+//         const int n = nums.size();
+//         int ans = INT_MIN;
+//         int tmp = 0;
+//         int prev = INT_MIN;
+//         for(size_t i = 0; i < n; i++){
+//             if(nums[i] > prev){
+//                 tmp++;
+//                 prev = nums[i];
+//             }else{
+//                 tmp = 1;
+//                 prev = nums[i];
+//             }
+//             ans = max(ans, tmp);
+//         }
+//         return ans;
+//     }
+// };
